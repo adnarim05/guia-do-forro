@@ -1,0 +1,1288 @@
+<title>Guia do Forró</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0..1,0&display=block">
+<style>
+/* Layout: revista de estudo. Capas editoriais por destino, a cor do colar comanda a página do nível.
+   Celular: barra inferior. Tablet (600–1199): trilho lateral. Computador (1200+): menu lateral e lista + detalhe. */
+:root{
+  --primary:#156E0D;--on-primary:#FFFFFF;--primary-container:#A6F690;--on-primary-container:#0D2000;
+  --secondary:#506449;--on-secondary:#FFFFFF;--secondary-container:#D3E9CA;--on-secondary-container:#0F2005;
+  --tertiary:#2959BC;--on-tertiary:#FFFFFF;--tertiary-container:#DEE0FF;--on-tertiary-container:#001944;
+  --error:#B4271F;--on-error:#FFFFFF;--error-container:#FFDAD3;--on-error-container:#380C00;
+  --surface:#F5FBF2;--on-surface:#181D17;--surface-variant:#DAE6D5;--on-surface-variant:#3F4A3C;
+  --sc-lowest:#FFFFFF;--sc-low:#EFF5ED;--sc:#E9F0E7;--sc-high:#E4EAE1;--sc-highest:#DEE4DC;
+  --outline:#6F7A6B;--outline-variant:#BECAB9;--inverse-surface:#2D322B;--inverse-on-surface:#ECF3EA;--inverse-primary:#8ADA75;
+  --scrim:rgba(0,0,0,.4);--shadow:rgba(0,0,0,.18);
+  --brand-green:#3DEB3D;--on-brand:#0D2000;
+  --c-transparente:#DFF4FF;--on-c-transparente:#20333C;--cc-transparente:#DFF4FF;--on-cc-transparente:#20333C;
+  --c-branca:#FFFFFF;--on-c-branca:#1B1B1B;--cc-branca:#F1F1F1;--on-cc-branca:#1B1B1B;
+  --c-azul:#006688;--on-c-azul:#FFFFFF;--cc-azul:#C2E8FF;--on-cc-azul:#001E2B;
+  --c-preta:#1B1B1B;--on-c-preta:#FFFFFF;--cc-preta:#E2E2E2;--on-cc-preta:#1B1B1B;
+  --c-vermelha:#C0001B;--on-c-vermelha:#FFFFFF;--cc-vermelha:#FFDAD4;--on-cc-vermelha:#3B0900;
+  --hatch:rgba(23,29,23,.06);
+  --font-display:'Lato','Helvetica Neue',Arial,sans-serif;
+  --font-body:'Roboto','Helvetica Neue',Arial,sans-serif;
+  --r-xs:4px;--r-s:8px;--r-m:12px;--r-l:16px;--r-xl:28px;--r-full:999px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --primary:#8ADA75;--on-primary:#063900;--primary-container:#005300;--on-primary-container:#A6F690;
+  --secondary:#B7CDAF;--on-secondary:#23351E;--secondary-container:#394C33;--on-secondary-container:#D3E9CA;
+  --tertiary:#BCC2FF;--on-tertiary:#002D6D;--tertiary-container:#004299;--on-tertiary-container:#DEE0FF;
+  --error:#FFB4A5;--on-error:#690000;--error-container:#93000B;--on-error-container:#FFDAD3;
+  --surface:#10150D;--on-surface:#DEE4DC;--surface-variant:#3F4A3C;--on-surface-variant:#BECAB9;
+  --sc-lowest:#091006;--sc-low:#181D17;--sc:#1C211B;--sc-high:#272B25;--sc-highest:#31362F;
+  --outline:#899484;--outline-variant:#3F4A3C;--inverse-surface:#DEE4DC;--inverse-on-surface:#2D322B;--inverse-primary:#156E0D;
+  --scrim:rgba(0,0,0,.6);--shadow:rgba(0,0,0,.5);
+  --brand-green:#3DEB3D;--on-brand:#0D2000;
+  --c-transparente:#364953;--on-c-transparente:#D0E6F1;--cc-transparente:#20333C;--on-cc-transparente:#D0E6F1;
+  --c-branca:#FFFFFF;--on-c-branca:#1B1B1B;--cc-branca:#303030;--on-cc-branca:#E2E2E2;
+  --c-azul:#76D1FF;--on-c-azul:#003548;--cc-azul:#003548;--on-cc-azul:#C2E8FF;
+  --c-preta:#1B1B1B;--on-c-preta:#FFFFFF;--cc-preta:#2A2A2A;--on-cc-preta:#E2E2E2;
+  --c-vermelha:#FFB4A8;--on-c-vermelha:#690007;--cc-vermelha:#5C0002;--on-cc-vermelha:#FFDAD4;
+  --hatch:rgba(222,228,220,.06);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --primary:#8ADA75;--on-primary:#063900;--primary-container:#005300;--on-primary-container:#A6F690;
+  --secondary:#B7CDAF;--on-secondary:#23351E;--secondary-container:#394C33;--on-secondary-container:#D3E9CA;
+  --tertiary:#BCC2FF;--on-tertiary:#002D6D;--tertiary-container:#004299;--on-tertiary-container:#DEE0FF;
+  --error:#FFB4A5;--on-error:#690000;--error-container:#93000B;--on-error-container:#FFDAD3;
+  --surface:#10150D;--on-surface:#DEE4DC;--surface-variant:#3F4A3C;--on-surface-variant:#BECAB9;
+  --sc-lowest:#091006;--sc-low:#181D17;--sc:#1C211B;--sc-high:#272B25;--sc-highest:#31362F;
+  --outline:#899484;--outline-variant:#3F4A3C;--inverse-surface:#DEE4DC;--inverse-on-surface:#2D322B;--inverse-primary:#156E0D;
+  --scrim:rgba(0,0,0,.6);--shadow:rgba(0,0,0,.5);
+  --brand-green:#3DEB3D;--on-brand:#0D2000;
+  --c-transparente:#364953;--on-c-transparente:#D0E6F1;--cc-transparente:#20333C;--on-cc-transparente:#D0E6F1;
+  --c-branca:#FFFFFF;--on-c-branca:#1B1B1B;--cc-branca:#303030;--on-cc-branca:#E2E2E2;
+  --c-azul:#76D1FF;--on-c-azul:#003548;--cc-azul:#003548;--on-cc-azul:#C2E8FF;
+  --c-preta:#1B1B1B;--on-c-preta:#FFFFFF;--cc-preta:#2A2A2A;--on-cc-preta:#E2E2E2;
+  --c-vermelha:#FFB4A8;--on-c-vermelha:#690007;--cc-vermelha:#5C0002;--on-cc-vermelha:#FFDAD4;
+  --hatch:rgba(222,228,220,.06);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--surface);color:var(--on-surface);font:400 15px/1.55 var(--font-body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--surface)}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--tertiary);outline-offset:2px;border-radius:6px}
+.ms{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;direction:ltr;-webkit-font-feature-settings:'liga';font-feature-settings:'liga';width:1em;overflow:hidden;flex:none}
+.ms.fill{font-variation-settings:'FILL' 1}
+.ms.sm{font-size:18px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- tipografia ---------- */
+.display{font:900 clamp(40px,8vw,84px)/.95 var(--font-display);letter-spacing:-.02em;margin:0;text-wrap:balance}
+.h1{font:900 clamp(32px,5vw,52px)/1.02 var(--font-display);letter-spacing:-.015em;margin:0;text-wrap:balance}
+.h2{font:700 clamp(22px,3vw,28px)/1.15 var(--font-display);margin:0;text-wrap:balance}
+.h3{font:700 19px/1.25 var(--font-display);margin:0}
+.title{font:500 16px/1.4 var(--font-body);margin:0}
+.body-l{font-size:17px;line-height:1.6}
+.small{font-size:13px;line-height:1.45}
+.muted{color:var(--on-surface-variant)}
+.eyebrow{font:700 12px/1.2 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--on-surface-variant);margin:0}
+.num{font:900 15px/1 var(--font-display);font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.measure{max-width:64ch}
+
+/* ---------- casca ---------- */
+.shell{min-height:100%}
+main{padding-bottom:calc(104px + env(safe-area-inset-bottom,0px))}
+.page{max-width:1120px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:8px 32px;display:flex;flex-direction:column;gap:28px}
+.page.narrow{max-width:760px}
+.nav{position:fixed;z-index:40;background:var(--sc);display:flex}
+.nav-list{display:flex;list-style:none;margin:0;padding:0}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:var(--on-surface-variant);font:500 12px/1.2 var(--font-body);min-width:64px;padding-block:12px 16px;flex:1}
+.nav-ind{display:grid;place-items:center;width:64px;height:32px;border-radius:var(--r-full);transition:background .2s}
+.nav-item[aria-current="page"]{color:var(--on-surface)}
+.nav-item[aria-current="page"] .nav-ind{background:var(--secondary-container);color:var(--on-secondary-container)}
+.nav-item[aria-current="page"] .ms{font-variation-settings:'FILL' 1}
+.nav-item:hover .nav-ind{background:color-mix(in srgb,var(--on-surface) 8%,transparent)}
+.nav-item[aria-current="page"]:hover .nav-ind{background:var(--secondary-container)}
+.nav-brand,.nav-extra,.nav-foot{display:none}
+@media (max-width:599px){
+  .nav{left:0;right:0;bottom:0;padding-bottom:env(safe-area-inset-bottom,0px);padding-left:max(0px,env(safe-area-inset-left,0px));padding-right:max(0px,env(safe-area-inset-right,0px));border-top:1px solid var(--outline-variant)}
+  .nav-list{width:100%;justify-content:space-around}
+}
+@media (min-width:600px){
+  main{padding-bottom:32px}
+  .nav{top:0;bottom:0;left:0;flex-direction:column;padding-top:calc(16px + env(safe-area-inset-top,0px));padding-left:env(safe-area-inset-left,0px);border-right:1px solid var(--outline-variant)}
+}
+@media (min-width:600px) and (max-width:1199px){
+  .nav{width:calc(88px + env(safe-area-inset-left,0px));align-items:center}
+  .nav-list{flex-direction:column;gap:8px;margin-top:24px}
+  .nav-item{padding-block:4px}
+  main{margin-left:calc(88px + env(safe-area-inset-left,0px))}
+  .nav-brand.rail{display:grid}
+}
+@media (min-width:1200px){
+  .nav{width:calc(280px + env(safe-area-inset-left,0px));padding-inline:12px;overflow-y:auto}
+  main{margin-left:calc(280px + env(safe-area-inset-left,0px))}
+  .nav-brand.drawer{display:flex}
+  .nav-list{flex-direction:column;gap:2px}
+  .nav-item{flex-direction:row;gap:12px;font-size:14px;padding:0 16px 0 0;min-height:56px;border-radius:var(--r-full)}
+  .nav-item .nav-ind{width:auto;height:auto;padding-left:16px;background:none!important}
+  .nav-item[aria-current="page"]{background:var(--secondary-container);color:var(--on-secondary-container)}
+  .nav-item:hover{background:color-mix(in srgb,var(--on-surface) 8%,transparent)}
+  .nav-item[aria-current="page"]:hover{background:var(--secondary-container)}
+  .nav-extra{display:block;margin-top:16px;border-top:1px solid var(--outline-variant);padding-top:12px}
+  .nav-foot{display:flex;margin-top:auto;padding:16px 4px calc(16px + env(safe-area-inset-bottom,0px));flex-direction:column;gap:12px}
+  .mobile-only{display:none!important}
+}
+@media (max-width:1199px){.wide-only{display:none!important}}
+.nav-brand{align-items:center;gap:12px;padding:8px 16px 16px}
+.nav-brand.rail{place-items:center;width:56px;height:56px;border-radius:var(--r-l);background:var(--brand-green);color:var(--on-brand);font:900 18px/1 var(--font-display)}
+.brand-mark{width:44px;height:44px;border-radius:12px;background:var(--brand-green);color:var(--on-brand);display:grid;place-items:center;font:900 17px/1 var(--font-display);flex:none}
+.brand-name{font:900 18px/1.1 var(--font-display)}
+.nav-extra .nav-item{min-height:48px;font-size:14px;color:var(--on-surface-variant)}
+
+/* barra superior */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--surface);display:flex;align-items:center;gap:4px;min-height:64px;padding-left:max(4px,env(safe-area-inset-left,0px));padding-right:max(8px,env(safe-area-inset-right,0px))}
+.topbar.scrolled{background:var(--sc)}
+.topbar .t{font:500 20px/1.2 var(--font-display);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.topbar-inner{max-width:1120px;margin-inline:auto;width:100%;display:flex;align-items:center;gap:4px}
+.icon-btn{width:48px;height:48px;border-radius:var(--r-full);border:0;background:none;display:grid;place-items:center;cursor:pointer;color:var(--on-surface-variant);flex:none;text-decoration:none}
+.icon-btn:hover{background:color-mix(in srgb,var(--on-surface) 8%,transparent)}
+.icon-btn.on{color:var(--on-surface)}
+
+/* banners */
+.banner{display:flex;gap:12px;align-items:flex-start;padding:12px 16px;border-radius:var(--r-m)}
+.banner.offline{background:var(--inverse-surface);color:var(--inverse-on-surface)}
+.banner.info{background:var(--tertiary-container);color:var(--on-tertiary-container)}
+.banner.warn{background:var(--error-container);color:var(--on-error-container)}
+.banner.pend{background:color-mix(in srgb,#E8A302 22%,var(--sc-low));color:var(--on-surface);border:1px solid color-mix(in srgb,#E8A302 60%,var(--outline-variant))}
+.offline-strip{position:sticky;top:env(safe-area-inset-top,0px);z-index:35;background:var(--inverse-surface);color:var(--inverse-on-surface);font-size:13px;display:flex;gap:8px;align-items:center;justify-content:center;padding:8px 16px;text-align:center}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:0 24px;border-radius:var(--r-full);border:1px solid transparent;font:500 14px/1 var(--font-body);letter-spacing:.01em;cursor:pointer;text-decoration:none;white-space:nowrap;transition:background .15s,box-shadow .15s}
+.btn .ms{font-size:18px}
+.btn.filled{background:var(--primary);color:var(--on-primary)}
+.btn.filled:hover{box-shadow:0 1px 3px var(--shadow)}
+.btn.tonal{background:var(--secondary-container);color:var(--on-secondary-container)}
+.btn.outlined{border-color:var(--outline);background:none;color:var(--primary)}
+.btn.text{background:none;color:var(--primary);padding:0 12px}
+.btn.danger{background:var(--error);color:var(--on-error)}
+.btn.lg{min-height:56px;padding:0 28px;font-size:16px}
+.btn:hover:not(.filled):not(:disabled){background-image:linear-gradient(color-mix(in srgb,currentColor 8%,transparent),color-mix(in srgb,currentColor 8%,transparent))}
+.btn:disabled,.btn[aria-disabled="true"]{background:color-mix(in srgb,var(--on-surface) 12%,transparent)!important;color:color-mix(in srgb,var(--on-surface) 38%,transparent)!important;border-color:transparent!important;cursor:not-allowed;box-shadow:none}
+.btn-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.fab{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(96px + env(safe-area-inset-bottom,0px));z-index:35;display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:0 20px;border-radius:var(--r-l);background:var(--primary-container);color:var(--on-primary-container);border:0;box-shadow:0 3px 8px var(--shadow);font:500 15px/1 var(--font-body);text-decoration:none;cursor:pointer}
+@media (min-width:600px){.fab{bottom:calc(24px + env(safe-area-inset-bottom,0px))}}
+
+/* chips e selos */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:0 14px;border-radius:var(--r-s);border:1px solid var(--outline-variant);background:none;color:var(--on-surface-variant);font:500 14px/1 var(--font-body);cursor:pointer;text-decoration:none}
+.chip[aria-pressed="true"]{background:var(--secondary-container);color:var(--on-secondary-container);border-color:transparent;padding-left:8px}
+.chip .ms{font-size:18px}
+.selo{display:inline-flex;align-items:center;min-height:26px;padding:0 10px;border-radius:var(--r-s);font:500 13px/1 var(--font-body);border:1px solid var(--outline);white-space:nowrap}
+.selo.transparente{background:var(--c-transparente);color:var(--on-c-transparente)}
+.selo.branca{background:var(--c-branca);color:var(--on-c-branca)}
+.selo.azul{background:var(--c-azul);color:var(--on-c-azul)}
+.selo.preta{background:var(--c-preta);color:var(--on-c-preta)}
+.selo.vermelha{background:var(--c-vermelha);color:var(--on-c-vermelha)}
+.origem{display:inline-flex;align-items:center;gap:4px;min-height:22px;padding:0 8px;border-radius:var(--r-full);font:500 12px/1 var(--font-body);white-space:nowrap}
+.origem.oficial{background:var(--primary-container);color:var(--on-primary-container)}
+.origem.comunidade{background:var(--tertiary-container);color:var(--on-tertiary-container)}
+.origem.pessoal{background:var(--sc-highest);color:var(--on-surface-variant)}
+.origem.revisao{background:var(--error-container);color:var(--on-error-container)}
+.exemplo{display:inline-flex;align-items:center;min-height:22px;padding:0 8px;border-radius:var(--r-xs);font:700 11px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;border:1px dashed var(--outline);color:var(--on-surface-variant)}
+.tag{display:inline-flex;align-items:center;min-height:22px;padding:0 8px;border-radius:var(--r-xs);font:500 12px/1 var(--font-body);background:var(--sc-highest);color:var(--on-surface-variant)}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+
+/* superfícies */
+.card{background:var(--sc-low);border:1px solid var(--outline-variant);border-radius:var(--r-m);padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card.link{text-decoration:none;cursor:pointer;transition:background .15s,border-color .15s}
+.card.link:hover{background:var(--sc);border-color:var(--outline)}
+.card.flat{border:0}
+.list{display:flex;flex-direction:column;gap:12px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:12px}
+.atalhos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.atalho{display:flex;align-items:center;gap:10px;min-height:48px;padding:8px 12px;border-radius:12px;background:var(--sc-low);border:1px solid var(--outline-variant);color:var(--on-surface);text-decoration:none;font:500 14px/1.25 Roboto,system-ui,sans-serif}
+.atalho:last-child:nth-child(odd){grid-column:1/-1}
+.atalho>span:nth-child(2){flex:1;min-width:0}.atalho .selo{min-height:22px;padding:0 8px;font-size:12px}
+.atalho .ms,.atalho .material-symbols-rounded{color:var(--primary)}
+.atalho:hover{background:var(--sc)}
+@media (min-width:840px){.atalhos{grid-template-columns:repeat(4,minmax(0,1fr))}.atalho:last-child:nth-child(odd){grid-column:auto}}
+.row{display:flex;align-items:center;gap:16px;min-width:0}
+.grow{flex:1;min-width:0}
+.section{display:flex;flex-direction:column;gap:16px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--outline-variant);padding-top:16px}
+.empty{border:1px dashed var(--outline);border-radius:var(--r-m);padding:20px;display:flex;flex-direction:column;gap:6px;background:var(--sc-low)}
+.empty .h3{font-size:16px}
+.divider{height:1px;background:var(--outline-variant);border:0;margin:0}
+
+/* capa editorial */
+.cover{display:grid;gap:20px;grid-template-columns:1fr;align-items:end}
+@media (min-width:900px){.cover{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px}}
+.cover-text{display:flex;flex-direction:column;gap:16px;min-width:0}
+.foto{position:relative;border-radius:var(--r-l);border:1px solid var(--outline-variant);background:repeating-linear-gradient(135deg,var(--hatch) 0 10px,transparent 10px 20px),var(--sc);display:flex;align-items:flex-end;overflow:hidden;max-width:100%;color:var(--on-surface-variant)}
+.foto .ms.cam{position:absolute;top:14px;right:14px;opacity:.7}
+.foto figcaption{padding:14px 16px;font-size:12.5px;line-height:1.4;background:linear-gradient(transparent,color-mix(in srgb,var(--surface) 82%,transparent));width:100%}
+.r45{aspect-ratio:4/5}
+@media (max-width:899px){.cover .foto.r45,.nivel-hero .foto.r45,.colar-art .foto.r45{aspect-ratio:3/2}}
+.no-icons .ms{visibility:hidden;width:0}.r169{aspect-ratio:16/9}.r32{aspect-ratio:3/2}.r11{aspect-ratio:1/1}.r219{aspect-ratio:21/9}
+figure{margin:0}
+
+/* nível */
+.nivel-hero{border-radius:var(--r-xl);padding:clamp(20px,4vw,40px);display:grid;gap:24px;grid-template-columns:1fr;position:relative;overflow:hidden;border:1px solid var(--outline-variant)}
+@media (min-width:900px){.nivel-hero{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:end}}
+.nivel-hero .big-num{font:900 clamp(72px,14vw,168px)/.8 var(--font-display);letter-spacing:-.04em;opacity:.16;position:absolute;right:clamp(12px,3vw,32px);top:clamp(8px,2vw,20px);font-variant-numeric:tabular-nums;pointer-events:none}
+.th-transparente{background:var(--cc-transparente);color:var(--on-cc-transparente)}
+.th-branca{background:var(--cc-branca);color:var(--on-cc-branca)}
+.th-azul{background:var(--cc-azul);color:var(--on-cc-azul)}
+.th-preta{background:var(--cc-preta);color:var(--on-cc-preta)}
+.th-vermelha{background:var(--cc-vermelha);color:var(--on-cc-vermelha)}
+.nivel-hero .muted{color:inherit;opacity:.78}
+.nivel-hero .foto{border-color:color-mix(in srgb,currentColor 25%,transparent);color:inherit}
+
+/* trilha */
+.trilha{display:flex;flex-direction:column;gap:0;counter-reset:n}
+.trilha-item{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:16px;align-items:center;padding:18px 8px 18px 0;border-top:1px solid var(--outline-variant);text-decoration:none;position:relative}
+.trilha-item:hover{background:var(--sc-low)}
+.trilha-item .n{font:900 clamp(28px,4vw,40px)/1 var(--font-display);font-variant-numeric:tabular-nums;color:var(--on-surface-variant);text-align:right}
+.trilha-item.atual{background:var(--secondary-container);color:var(--on-secondary-container);border-radius:var(--r-m);border-top-color:transparent}
+.trilha-item.atual + .trilha-item{border-top-color:transparent}
+.trilha-item.atual .n,.trilha-item.atual .muted{color:inherit}
+.trilha-item .nome{font:900 clamp(20px,3vw,28px)/1.1 var(--font-display)}
+.pill{display:inline-flex;align-items:center;min-height:22px;padding:0 10px;border-radius:var(--r-full);background:var(--primary);color:var(--on-primary);font:500 12px/1 var(--font-body)}
+
+/* progresso */
+.progress{height:8px;border-radius:4px;background:color-mix(in srgb,currentColor 16%,transparent);overflow:hidden}
+.progress > i{display:block;height:100%;border-radius:4px;background:var(--primary);transition:width .4s ease}
+.nivel-hero .progress > i{background:currentColor}
+.ring{--p:0;width:64px;height:64px;border-radius:50%;background:conic-gradient(var(--primary) calc(var(--p)*1%),var(--sc-highest) 0);display:grid;place-items:center;flex:none}
+.ring > span{width:50px;height:50px;border-radius:50%;background:var(--sc-low);display:grid;place-items:center;font:700 14px/1 var(--font-display);font-variant-numeric:tabular-nums}
+
+/* passos */
+.passo-card .nome{font:700 18px/1.25 var(--font-display);margin:0}
+.passo-card p{margin:0}
+.status-dot{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--on-surface-variant)}
+.status-dot::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--outline-variant)}
+.status-dot.revisando::before{background:#E8A302}
+.status-dot.revisado::before{background:var(--primary)}
+.seg{display:flex;border:1px solid var(--outline);border-radius:var(--r-full);overflow:hidden;width:100%;max-width:520px}
+.seg button{flex:1;min-height:40px;border:0;border-left:1px solid var(--outline);background:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;font:500 14px/1.1 var(--font-body);cursor:pointer;padding:0 8px;color:var(--on-surface)}
+.seg button:first-child{border-left:0}
+.seg button[aria-pressed="true"]{background:var(--secondary-container);color:var(--on-secondary-container)}
+.seg .ms{font-size:18px}
+
+/* formulários */
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label,.field .lbl{font:500 13px/1.2 var(--font-body);color:var(--on-surface-variant)}
+.input,.textarea,.select{width:100%;border:1px solid var(--outline);border-radius:var(--r-xs);background:transparent;padding:14px 16px;font-size:16px;color:var(--on-surface)}
+.textarea{min-height:110px;resize:vertical;line-height:1.5}
+.input:focus,.textarea:focus,.select:focus{outline:2px solid var(--primary);outline-offset:-1px;border-color:transparent}
+.field.err .input,.field.err .textarea{border-color:var(--error);outline-color:var(--error)}
+.field .help{font-size:12.5px;color:var(--on-surface-variant)}
+.field.err .help{color:var(--error)}
+.search{display:flex;align-items:center;gap:12px;min-height:56px;border-radius:var(--r-full);background:var(--sc-high);padding:0 8px 0 16px;color:var(--on-surface-variant)}
+.search input{flex:1;min-width:0;border:0;background:none;font-size:16px;color:var(--on-surface);padding:12px 0}
+.search input:focus{outline:none}
+.search:focus-within{outline:2px solid var(--primary)}
+.check{display:flex;gap:12px;align-items:flex-start;cursor:pointer;padding:6px 0}
+.check input{width:20px;height:20px;accent-color:var(--primary);margin:2px 0 0;flex:none}
+.form{display:flex;flex-direction:column;gap:20px;max-width:640px}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px}
+
+/* sequência */
+.seq{display:flex;flex-direction:column;gap:0;counter-reset:s}
+.seq-step{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 0;border-top:1px solid var(--outline-variant)}
+.seq-step .n{font:900 26px/1 var(--font-display);color:var(--primary);text-align:right;font-variant-numeric:tabular-nums}
+.seq-trans{margin-left:58px;padding:6px 12px;border-left:2px dotted var(--outline);font-size:13px;color:var(--on-surface-variant)}
+
+/* critérios */
+.crit-group{display:flex;flex-direction:column;gap:4px;border-top:2px solid var(--on-surface);padding-top:14px}
+.crit-item{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid var(--outline-variant)}
+.crit-item:last-child{border-bottom:0}
+.crit-item .n{font:900 14px/1.6 var(--font-display);color:var(--on-surface-variant);min-width:22px;font-variant-numeric:tabular-nums}
+.crit-item p{margin:0}
+
+/* agenda */
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.cal .dow{font:500 12px/1 var(--font-body);color:var(--on-surface-variant);text-align:center;padding:6px 0}
+.cal button{aspect-ratio:1;max-width:100%;border:0;border-radius:var(--r-full);background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font:500 14px/1 var(--font-body);font-variant-numeric:tabular-nums;color:var(--on-surface)}
+.cal button.out{color:color-mix(in srgb,var(--on-surface) 35%,transparent)}
+.cal button.hoje{border:1px solid var(--primary);color:var(--primary)}
+.cal button[aria-pressed="true"]{background:var(--primary);color:var(--on-primary)}
+.cal button i{width:5px;height:5px;border-radius:50%;background:var(--tertiary)}
+.cal button[aria-pressed="true"] i{background:var(--on-primary)}
+.date-block{width:64px;flex:none;text-align:center;border-radius:var(--r-m);background:var(--tertiary-container);color:var(--on-tertiary-container);padding:10px 4px}
+.date-block b{display:block;font:900 26px/1 var(--font-display);font-variant-numeric:tabular-nums}
+.date-block span{font:700 11px/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase}
+
+/* player */
+.player{border-radius:var(--r-l);overflow:hidden;background:#0B0F0A;color:#E9F0E7;display:flex;flex-direction:column}
+.player .tela{aspect-ratio:16/9;display:grid;place-items:center;background:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 10px,transparent 10px 20px);position:relative}
+.player .tela .cap{position:absolute;left:16px;bottom:12px;right:16px;font-size:12.5px;opacity:.8}
+.player .ctrls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:12px 16px}
+.player .bar{flex:1 1 100%;height:4px;border-radius:2px;background:rgba(255,255,255,.2);position:relative}
+.player .bar i{position:absolute;inset:0 auto 0 0;background:var(--brand-green);border-radius:2px}
+.player .icon-btn{color:#E9F0E7}
+.player .chip{color:#E9F0E7;border-color:rgba(255,255,255,.3)}
+.player .chip[aria-pressed="true"]{background:#E9F0E7;color:#0B0F0A}
+
+/* lista + detalhe */
+.ld{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
+@media (min-width:1200px){.ld{grid-template-columns:minmax(320px,400px) minmax(0,1fr);align-items:start}.ld-detail{position:sticky;top:calc(80px + env(safe-area-inset-top,0px));max-height:calc(100vh - 100px);overflow:auto;border-left:1px solid var(--outline-variant);padding-left:32px}}
+.sel{outline:2px solid var(--primary);outline-offset:-2px}
+
+/* esqueleto */
+.sk{border-radius:var(--r-m);background:linear-gradient(90deg,var(--sc) 0%,var(--sc-high) 50%,var(--sc) 100%);background-size:200% 100%;animation:sh 1.2s infinite}
+@keyframes sh{to{background-position:-200% 0}}
+
+/* diálogo e snackbar */
+.scrim{position:fixed;inset:0;background:var(--scrim);z-index:80;display:grid;place-items:center;padding:24px}
+.dialog{background:var(--sc-high);color:var(--on-surface);border-radius:var(--r-xl);padding:24px;max-width:440px;width:100%;display:flex;flex-direction:column;gap:16px;box-shadow:0 8px 24px var(--shadow);max-height:85vh;overflow:auto}
+.dialog .ms.top{color:var(--secondary);align-self:center}
+.dialog .acts{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:8px}
+.snack{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(96px + env(safe-area-inset-bottom,0px));z-index:90;background:var(--inverse-surface);color:var(--inverse-on-surface);border-radius:var(--r-s);padding:14px 16px;display:flex;gap:16px;align-items:center;box-shadow:0 3px 8px var(--shadow);max-width:min(560px,calc(100vw - 32px));font-size:14px;animation:up .2s ease}
+.snack .btn.text{color:var(--inverse-primary)}
+@media (min-width:600px){.snack{bottom:calc(24px + env(safe-area-inset-bottom,0px))}}
+@keyframes up{from{transform:translate(-50%,12px);opacity:0}}
+.view-enter{animation:fade .22s ease}
+@keyframes fade{from{opacity:.0;transform:translateY(6px)}}
+.pop{animation:pop .3s ease}
+@keyframes pop{50%{transform:scale(1.15)}}
+@media (prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}}
+
+/* acesso */
+.auth{min-height:100%;display:grid;grid-template-columns:1fr}
+@media (min-width:900px){.auth{grid-template-columns:1fr 1fr}}
+.auth-art{background:var(--brand-green);color:var(--on-brand);padding:clamp(24px,5vw,56px);padding-top:calc(clamp(24px,5vw,56px) + env(safe-area-inset-top,0px));display:flex;flex-direction:column;justify-content:space-between;gap:32px;min-height:340px}
+.auth-art .foto{border-color:rgba(13,32,0,.25);color:var(--on-brand);background:repeating-linear-gradient(135deg,rgba(13,32,0,.07) 0 10px,transparent 10px 20px),rgba(255,255,255,.18)}
+.auth-art .foto figcaption{background:none}
+.auth-form{padding:clamp(24px,5vw,56px);padding-left:max(16px,env(safe-area-inset-left,0px),clamp(24px,5vw,56px));padding-right:max(16px,env(safe-area-inset-right,0px),clamp(24px,5vw,56px));display:flex;flex-direction:column;justify-content:center;gap:20px;max-width:560px;width:100%;margin-inline:auto}
+.colar-pick{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr));gap:10px}
+.colar-pick button{border:1px solid var(--outline-variant);border-radius:var(--r-m);padding:14px;background:var(--sc-low);text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.colar-pick button[aria-pressed="true"]{border:2px solid var(--primary);background:var(--secondary-container);color:var(--on-secondary-container)}
+
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:14px}
+.kv dt{color:var(--on-surface-variant)}
+.kv dd{margin:0}
+.toggle{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid var(--outline-variant)}
+.switch{width:52px;height:32px;border-radius:var(--r-full);border:2px solid var(--outline);background:var(--sc-highest);position:relative;cursor:pointer;flex:none}
+.switch::after{content:"";position:absolute;top:6px;left:6px;width:16px;height:16px;border-radius:50%;background:var(--outline);transition:all .2s}
+.switch[aria-checked="true"]{background:var(--primary);border-color:var(--primary)}
+.switch[aria-checked="true"]::after{left:24px;top:2px;width:24px;height:24px;background:var(--on-primary)}
+.list-row{display:flex;align-items:center;gap:16px;padding:14px 4px;border-top:1px solid var(--outline-variant);text-decoration:none;min-height:56px}
+.list-row:hover{background:var(--sc-low)}
+.list-row .ms.lead{color:var(--on-surface-variant)}
+.quote{font:400 clamp(20px,2.6vw,26px)/1.4 var(--font-display);margin:0;text-wrap:pretty}
+.colar-art{display:grid;gap:24px;grid-template-columns:1fr;padding-block:24px;border-top:1px solid var(--outline-variant)}
+@media (min-width:900px){.colar-art{grid-template-columns:120px minmax(0,1fr) minmax(0,.8fr);align-items:start}}
+.colar-art .n{font:900 64px/0.9 var(--font-display);color:var(--on-surface-variant);font-variant-numeric:tabular-nums}
+.disc{width:44px;height:44px;border-radius:50%;border:1px solid var(--outline);flex:none}
+.disc.transparente{background:var(--c-transparente)}.disc.branca{background:var(--c-branca)}.disc.azul{background:var(--c-azul)}.disc.preta{background:var(--c-preta)}.disc.vermelha{background:var(--c-vermelha)}
+</style>
+
+<div id="app" class="shell"></div>
+
+<script>
+(function(){
+'use strict';
+/* ================= DADOS (briefing + Manual do Aluno 28/08/2026) ================= */
+var FONTE = 'Manual do Aluno, 28/08/2026';
+var NIVEIS = [
+  {id:'transparente',nome:'Transparente',cor:'transparente'},
+  {id:'branca',nome:'Branca',cor:'branca'},
+  {id:'azul',nome:'Azul',cor:'azul'},
+  {id:'azul-intermediaria',nome:'Azul Intermediária',cor:'azul'},
+  {id:'azul-avancada',nome:'Azul Avançada',cor:'azul'},
+  {id:'preta',nome:'Preta',cor:'preta'},
+  {id:'preta-avancada',nome:'Preta Avançada',cor:'preta'},
+  {id:'vermelha',nome:'Vermelha',cor:'vermelha'}
+];
+var COLARES = {
+  transparente:{nome:'Colar Transparente',palavra:'Humildade',texto:'Ao entrar para a escola os alunos são contemplados com o colar transparente. Este colar, já no primeiro momento, traz a característica mais valiosa para a escola: a humildade, que é aprender com toda e qualquer pessoa a todos os momentos, não só as técnicas da dança, mas também nossas qualidades como ser humano.',foto:'Foto: aluno novo recebendo o colar transparente na primeira roda'},
+  branca:{nome:'Colar Branco',palavra:'Despertar',texto:'O colar branco representa o despertar da pessoa para um novo universo de possibilidades. A imagem que a pessoa tem da música, da dança, de toda a comunidade e da cultura ao redor do forró passa a ser ressignificada diariamente. Há uma infinidade de saberes a serem desvendados e vividos.',foto:'Foto: casal em giro no salão, luz quente'},
+  azul:{nome:'Colar Azul',palavra:'Vontade',texto:'Com a cor azul vem a vontade, momento em que o aluno já entendeu os benefícios que a escola consegue proporcionar, não só a dança como também na vida em geral e agora ele tem toda a energia e expectativa de viver tudo isso que foi vislumbrado. O aluno percebe que é possível evoluir e aprender as coisas que antes pareciam distantes e que a cada nova prática vai dominando seus próprios movimentos e com isso vão se elevando a autoestima e a autoconfiança. A sensação é tão boa que a vontade só cresce de continuar evoluindo.',foto:'Foto: roda azul em movimento, vista do alto'},
+  preta:{nome:'Colar Preto',palavra:'Seriedade',texto:'O forró para esses alunos, além de um hobby, normalmente é uma conquista pessoal e o desperta para novas técnicas, mais profundas e elaboradas, aos poucos conseguindo demonstrar sua personalidade através da dança, demandando maior dedicação e seriedade. É quando o aluno começa a se envolver mais profundamente com a escola, alcançando um colar bastante almejado.',foto:'Foto: detalhe de pés e pisadas, contraste alto'},
+  vermelha:{nome:'Colar Vermelho',palavra:'Paixão',texto:'O colar vermelho representa a paixão pela dança e pela escola, independente da função que irá assumir ali dentro. As pessoas que o carregam trazem uma história particular da sua caminhada com a dança repleta de eventos marcantes que a dança proporcionou ao longo do seu caminho. Novas possibilidades são abertas e o aprendizado nunca acaba, sendo mais um novo começo do que um final, com a possibilidade de inspirar e difundir os valores, a dança e a metodologia da escola.',foto:'Foto: casal experiente em baile cheio, luz de palco'}
+};
+function P(id,nome,nivel,cat,desc,pis,vars){return {id:id,nome:nome,niveis:[nivel],cat:cat,desc:desc,pisadas:pis||null,variacoes:vars||[],origem:'oficial'};}
+var PASSOS = [
+  P('passo-basico','Passo Básico','transparente','Fechado','A base do abraço e marcação do ritmo.'),
+  P('repeticao-de-perna','Repetição de Perna','transparente','Fechado','Variação de mola/massa no passo fechado.'),
+  P('caminhada','Caminhada','transparente','Fechado','Deslocamento mantendo a condução fechada.'),
+  P('giro-junto','Giro Junto','transparente','Fechado','Giro simultâneo mantendo o abraço.'),
+  P('abertura','Abertura','transparente','Aberto','Transição do fechado para o aberto.'),
+  P('ciclo','Ciclo','transparente','Aberto','Dinâmica contínua de troca de lado no aberto.'),
+  P('quebra-de-braco','Quebra de Braço','transparente','Aberto','Condução com alavanca para baixo no braço da conduzida.',null,[{t:'1 mão'},{t:'2 mãos'}]),
+  P('chuveirinho','Chuveirinho','transparente','Aberto','Ciclo básico da conduzida passando a mão por cima.'),
+  P('penteado','Penteado','transparente','Aberto','Mão do condutor passa pelo cabelo/cabeça e inverte as mãos.'),
+  P('aviao','Avião','transparente','Aberto','Projeção de braço em rotação.',null,[{t:'Conduzido'},{t:'Condutor'}]),
+  P('gaiola','Gaiola','transparente','Aberto','Enquadramento com braços cruzados/elevados para envolver e conduzir a par no espaço.'),
+  P('facao','Facão','branca','Fechado','Troca de lado para trás em 180°, com 3 + 3 pisadas.','3 + 3'),
+  P('abre-estranho-1','Abre Estranho 1','branca','Fechado','Troca de lado de 180° em 3 pisadas.','3'),
+  P('paulista','Paulista','branca','Fechado','Condutor solta a conduzida para giro de 3 pisadas.'),
+  P('chapeu','Chapéu','branca','Fechado','Conduzida dá a volta no condutor marcando 3 + 3 pisadas.','3 + 3',[{t:'Antes de completar a volta, ir direto para o Panamericano.',liga:'panamericano'}]),
+  P('manivela','Manivela','branca','Aberto','O condutor joga a mão direita para cima, cruzando os braços, dá as costas para a conduzida e volta em direção ao ombro esquerdo.','5',[{t:'1 mão'},{t:'2 mãos'}]),
+  P('giro-de-5-pisadas','Giro de 5 Pisadas','branca','Aberto','Ciclo + giro da conduzida em 5 pisadas.','5'),
+  P('panamericano','Panamericano','branca','Aberto','Giro em linha reta com estrutura de 5 pisadas.','5'),
+  P('volei','Vôlei','branca','Aberto','Mesma mecânica do Panamericano, guiado pela lateral do braço direito.','5'),
+  P('giro-do-condutor','Giro do Condutor','branca','Aberto','Giro próprio no aberto, com três variações.',null,[{t:'Giro por trás com a mão por cima'},{t:'Aviãozinho'},{t:'Troca de mão'}]),
+  P('costas-com-costas','Costas com Costas','branca','Aberto','Troca de lado executada após a trava do Quebra de Braço e suas variações.'),
+  P('ninja','Ninja','branca','Aberto','Condutor empurra o braço da conduzida, que gira em linha; o condutor volta para buscar a conduzida.','5')
+];
+function G(nome,itens,opts){return Object.assign({nome:nome,itens:itens},opts||{});}
+function I(t,o){return Object.assign({t:t},o||{});}
+var CR = {
+  desenho:'Desenho = uso das articulações permitindo dobrar e esticar os braços quando necessário. Clareza dos movimentos feitos.',
+  forca:'Força = uso de força desnecessária nos movimentos.',
+  sust:'Sustentação = ser responsável pela sustentação do próprio braço.',
+  timming:'Timming = momento correto da condução. Geralmente mais gradual e não pontual.',
+  ref:'Referência = é uma técnica utilizada que facilita e potencializa recursos como noção de espaço, conexão e interação com o par, entre outros.',
+  auto:'Autonomia = capacidade de executar os movimentos com precisão e independência e não apenas “se deixar fazer” - relacionado à presença, não a propostas, intervenções ou criatividade.',
+  agil:'Agilidade = ter tempo suficiente para executar as movimentações na velocidade que a música exige, sem perder a qualidade.',
+  espacos:'Espaços = capacidade de abrir ou preenchê-los.',
+  aprox:'Aproximação = quando o/a aluno/a fica muito próximo, muito afastado ou variando entre os dois de forma inadequada.',
+  autoSust:'Capacidade de sustentar o próprio corpo, comumente relacionado à postura ou firmeza do próprio corpo.',
+  musica:'Muito associado à energia colocada em cada música, deve ser cobrada a caracterização da forma de dançar cada uma (corpo de dança) - relacionado a forma de fazer, não o que fazer.'
+};
+var AVISO_ROD = 'Não é obrigatório fazer todos os movimentos, é interessante mostrar o conhecimento dos diferentes recursos e o que aprendeu na roda.';
+var AVISO_NENHUM = 'Nenhum movimento é obrigatório e/ou eliminatório caso não realizado, o aluno precisa mostrar domínio do conteúdo da roda de forma geral.';
+var EXAMES = [
+  {id:'transparente-branca',de:'transparente',para:'branca',avisos:[AVISO_ROD],grupos:[
+    G('Ritmo',[I('Pisadas em 1, 2, 3 (é exigida uma noção e um certo padrão; saídas pontuais podem acontecer).')]),
+    G('Marcação',[I('Apresentar domínio de transferência de peso e das marcações básicas: a frente e atrás, abre pisa e volta.')]),
+    G('Repertório',[I('Fazer os movimentos básicos da roda: caminhada e gira junto, chuveirinho, quebra de braço, ciclo e variações, aviãozinho.',{liga:['caminhada','giro-junto','chuveirinho','quebra-de-braco','ciclo']})]),
+    G('Contato',[I('Noção de contato no básico, caminhada, giro junto (funcionar!).')])]},
+  {id:'branca-azul',de:'branca',para:'azul',avisos:[AVISO_ROD],grupos:[
+    G('Ritmo',[I('Pisadas em 1, 2, 3 e 1-5 (ritmo mais consolidado).')]),
+    G('Marcação',[I('Apresentar domínio de transferência de peso e das marcações básicas: a frente e atrás, abre pisa e volta.')]),
+    G('Repertório',[I('Fazer os movimentos básicos da roda: caminhada, gira junto e solto, 5 pisadas, costas com costas, gira por trás.',{liga:['caminhada','costas-com-costas']})]),
+    G('Contato',[I('Noção de contato no básico, caminhada, giro junto (funcionar!).')])]},
+  {id:'azul-azul-intermediaria',de:'azul',para:'azul-intermediaria',avisos:[AVISO_NENHUM],nota:'No sumário do manual esta página aparece como "Azul para Azul Avançada", mas o conteúdo trata de Azul para Azul Intermediária.',grupos:[
+    G('Condução / Resposta',[I(CR.desenho),I(CR.forca),I(CR.sust),I(CR.timming)]),
+    G('Deslocamento',[I('Giro em linha'),I('Giro por trás'),I('Troca de lado = abertura e ocupação de espaços criando fluxo na dança.'),I(CR.ref)]),
+    G('Desenvoltura',[I('Ritmo = bem consolidado tanto 3 quanto 5 pisadas.'),I('Marcação = bem consolidada, incluindo formatos e potencializando deslocamentos.'),I('Repertório = fazer os movimentos básicos da roda: abriu estranhos, giros por trás (condutores) e giros em linha (conduzidos), facão e xique-xique.',{liga:['facao']}),I('Encadeamento = desenvoltura, fluidez, sequências.'),I(CR.auto)])]},
+  {id:'azul-intermediaria-azul-avancada',de:'azul-intermediaria',para:'azul-avancada',avisos:[AVISO_NENHUM],grupos:[
+    G('Condução / Resposta',[I(CR.desenho),I(CR.forca),I(CR.sust),I(CR.timming)]),
+    G('Auto sustentação',[I(CR.autoSust)]),
+    G('Deslocamento',[I(CR.espacos),I(CR.ref),I('Giros em linha'),I('Troca de lado'),I('Giro por trás')]),
+    G('Desenvoltura',[I('Ritmo = bem consolidado como um todo.'),I('Marcação = bem consolidada, incluindo formatos e potencializando deslocamentos.'),I('Repertório = movimentos aprendidos na roda serem realizados na dança.'),I(CR.auto),I('Contato = tanto do corpo quanto das mãos.'),I(CR.agil),I('Encadeamento = capacidade de sequenciar movimentações (de forma clara e com qualidade).')])]},
+  {id:'azul-avancada-preta',de:'azul-avancada',para:'preta',avisos:[],grupos:[
+    G('Condução / Resposta',[I(CR.desenho),I(CR.forca),I(CR.sust),I(CR.timming)]),
+    G('Auto sustentação',[I(CR.autoSust)]),
+    G('Deslocamento',[I(CR.espacos),I(CR.aprox),I('Giros em linha'),I('Troca de lado'),I(CR.ref)]),
+    G('Desenvoltura',[I('Ritmo = bem consolidado como um todo.'),I('Marcação = bem consolidada, incluindo formatos e potencializando deslocamentos.'),I('Repertório = movimentos aprendidos na roda serem realizados na dança.'),I('Encadeamento = capacidade de sequenciar movimentações (de forma clara e com qualidade).'),I(CR.ref,{tipo:'Recomendado',obs:'Não é essencial ou obrigatória, porém muito recomendada, por isso aparece aqui.'}),I(CR.auto),I(CR.agil)]),
+    G('Musicalidade',[I('Lenta'),I('Rápida')],{desc:CR.musica})]},
+  {id:'preta-preta-avancada',de:'preta',para:'preta-avancada',avisos:['A partir do momento que um recurso não aparece mais, ele é tido como dado e considerado um pré-requisito, podendo ser eliminatório.','O uso da meia ponta não é obrigatório. É uma técnica que deve ser ensinada e recomendada para os momentos que for vantajoso para a/o aluna/o utilizá-la; serve para potencializar certos recursos.'],grupos:[
+    G('Condução / Resposta',[I(CR.desenho),I(CR.forca),I(CR.sust),I(CR.timming)]),
+    G('Auto sustentação',[I('Capacidade de sustentar o próprio corpo.')]),
+    G('Corpo de dança',[I('Lenta'),I('Rápida')],{desc:CR.musica}),
+    G('Desenvoltura',[I('Marcação = bem consolidada, incluindo formatos e potencializando deslocamentos.'),I('Repertório = movimentos aprendidos na roda serem realizados na dança.'),I('Complexidade = encadeamento de recursos; capacidade de unir e/ou transitar entre recursos.'),I(CR.ref,{tipo:'Recomendado',obs:'Não é essencial ou obrigatória, porém muito recomendada, por isso aparece aqui.'}),I('Autonomia = capacidade de executar os movimentos com precisão e independência e não apenas “se deixar fazer” - relacionado à presença. Intervenções por parte dos conduzidos podem acontecer, mas não são cobradas. Variações de bases, braços, marcações etc. são desejáveis, mas ainda não obrigatórias; é interessante fazer aquilo que domina.'),I(CR.agil)]),
+    G('Expressão da melodia',[I('Lenta'),I('Rápida')],{desc:'Capacidade de expressar pontos específicos da música (nuances). Modificar a ação ou a intensidade ou construir algo totalmente novo baseado na melodia. Não está relacionado a entender o que a pessoa percebe e sim o que ela mostra perceber.'}),
+    G('Deslocamento',[I(CR.espacos),I(CR.aprox),I('Giros em linha = cobrado domínio e controle de pisadas, direcionamento, enquadramentos e finalizações.'),I('Troca de lado = quando os espaços são mostrados/preenchidos, mas o aluno não chega até onde é necessário após a etapa inicial de mostrar/perceber.')])]},
+  {id:'preta-avancada-vermelha',de:'preta-avancada',para:'vermelha',avisos:['A postura do aluno é analisada pelo DA junto com a equipe durante todo o semestre, devendo reportar sempre ao aluno em caso de postura prejudicial; após o reporte, o aluno tem ou não a liberação para realizar o pré-exame.'],grupos:[
+    G('Etapa 1 · Avaliação da postura',[I('Postura/comportamento: não discriminar a imagem da escola independente do que a pessoa é dentro da mesma, além de não prejudicar o funcionamento da unidade ou de aulas. É de suma importância que a equipe saiba diferenciar o aluno como aluno e como equipe (a postura como equipe não deve influenciar).'),I('Atitude considerada negativa: tendo uma opinião contrária à filosofia da escola, não procurar a equipe para uma solução e/ou esclarecimento, alimentando a situação de forma a prejudicar a marca.'),I('Atitude considerada negativa: prejudicar a evolução da aula com atitudes negativas e/ou desmotivação coletiva.')]),
+    G('Etapa 2 · Agilidade e resistência',[I('Conseguir executar as movimentações em tempo hábil de forma a preservar todos os aspectos da funcionalidade. Conseguir manter em toda a dança, mesmo cansada, a qualidade dos recursos sem limitar o desenvolvimento com o par.')]),
+    G('Etapa 2 · Condução, resposta e funcionalidade',[I('Tudo que diz respeito à comunicação de condução e respostas, além de deslocamentos e trocas de lado, referência, conforto, braços, pressão, sustentação. Diferenciar gosto e preferências.')]),
+    G('Etapa 2 · Complexidade, desenvoltura e adaptação',[I('A pessoa possui domínio de diferentes recursos para conseguir desenvolver sua dança de forma fluida e natural, conseguindo encadear os recursos e apresentar uma dança completa independente de com quem dança. Capacidade de juntar os vários recursos simples da dança para torná-la bem elaborada.')]),
+    G('Etapa 2 · Corpo de dança e autonomia',[I('Corpo de dança: capacidade de representar de forma geral e constante as características específicas e o sentimento que aquela música traz. Sentimento: alegre, triste, melancólica, pesada etc. Características: quebrado, fluido, quicado, constante etc. Podendo variar dentro de uma mesma música. O swing do corpo acompanha um mínimo o swing da música de forma constante.'),I('Autonomia: formas que a pessoa coloca o seu corpo dançante, portanto tem relação com o corpo de dança, mas a autonomia está presente também em todas as partes funcionais.')]),
+    G('Etapa 2 · Expressão da melodia e versatilidade',[I('Improvisos e variações, representação de um ou mais elementos da música de forma pontual e não constante: elemento específico e variações de altura, velocidade, e não ignorar as paradas e nuances mais óbvias da música na maior parte do tempo.')])]}
+];
+var PEND = [
+  {id:'tempo',titulo:'Tempo mínimo na roda',ops:['Transparente e Branca: recomendado de 30 a 45 dias de cronograma; Azul Iniciante: 3 meses; Azul Intermediária em diante: 6 meses, contados da última aprovação em exame.','Transparente à Azul: 1 mês; Azul Avançada à Vermelha: 6 meses.']},
+  {id:'gympass',titulo:'Frequência de alunos Gympass e TotalPass',ops:['8 presenças em cada um dos 3 meses anteriores ao exame, com direito a um mês dispensado a cada 6 meses.','Frequência de 4 vezes por mês (pelo menos nos 30 dias que antecedem a data do exame).']},
+  {id:'estrangeiros',titulo:'Alunos estrangeiros',ops:['Quem se matricula menos de 30 dias antes do exame não poderá prestá-lo.','Seguem as mesmas regras dos demais alunos matriculados, inclusive a frequência.']},
+  {id:'segunda',titulo:'Segunda chamada',ops:['Não é permitido realizar a 2ª chamada ou outro exame do mesmo ciclo como segunda chance. Em caso de doença, mortes ou outros imprevistos, a comissão avalia um terceiro momento.','Há segunda chamada após o exame unificado, para alunos em dia com a mensalidade que tiveram algum imprevisto e não compareceram na data oficial.']},
+  {id:'esporadico',titulo:'Ausência que exige nivelamento',ops:['45 dias afastado da escola ou das aulas da turma.','60 dias afastado da escola ou das aulas da turma.']},
+  {id:'teste',titulo:'Período de teste após o nivelamento',ops:['Uma semana de teste na roda.','Até 14 dias de teste na roda.','Mínimo de 4 aulas ou 2 semanas consecutivas de aulas.']}
+];
+var TIPOS_EVENTO = ['Baile','Aula','Workshop','Festival','Outro'];
+
+/* ================= ESTADO (simulado, não é salvo) ================= */
+function addDays(n){var d=new Date();d.setHours(0,0,0,0);d.setDate(d.getDate()+n);return d;}
+function iso(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+var S = {
+  perfil:'aluno', logado:true, nivel:'branca', offline:false, falha:false,
+  status:{'passo-basico':'revisado','repeticao-de-perna':'revisado','caminhada':'revisado','giro-junto':'revisado','abertura':'revisado','ciclo':'revisado','quebra-de-braco':'revisado','chuveirinho':'revisado','penteado':'revisado','aviao':'revisado','gaiola':'revisado','facao':'revisado','abre-estranho-1':'revisado','paulista':'revisado','chapeu':'revisando','manivela':'revisando'},
+  crit:{'branca-azul:0:0':true},
+  notas:{}, notaNivel:{},
+  historico:[{nivel:'transparente',data:'',ex:true},{nivel:'branca',data:'',ex:true}],
+  combos:[
+    {id:'ex-branca-1',nome:'Sequência de estudo da Branca',nivel:'branca',aula:'',passos:['facao','paulista','chapeu','panamericano'],trans:['','',''],origem:'comunidade',exemplo:true,criado:'2026-10-20'},
+    {id:'ex-transparente-1',nome:'Sequência de estudo da Transparente',nivel:'transparente',aula:'',passos:['passo-basico','abertura','ciclo','chuveirinho','quebra-de-braco'],trans:['','','',''],origem:'comunidade',exemplo:true,criado:'2026-10-12'}
+  ],
+  midias:[
+    {id:'m1',tipo:'Vídeo',titulo:'Facão visto de frente',passo:'facao',nivel:'branca',combo:'',desc:'Execução completa, velocidade normal.',origem:'comunidade',exemplo:true,baixado:true,cap:'Vídeo: casal executando o Facão, câmera fixa de frente'},
+    {id:'m2',tipo:'Vídeo',titulo:'Facão visto de lado',passo:'facao',nivel:'branca',combo:'',desc:'Detalhe das 3 + 3 pisadas.',origem:'comunidade',exemplo:true,baixado:false,cap:'Vídeo: pés em close durante as pisadas'},
+    {id:'m3',tipo:'Foto',titulo:'Posição de mãos no Chapéu',passo:'chapeu',nivel:'branca',combo:'',desc:'Momento em que a conduzida passa por trás.',origem:'comunidade',exemplo:true,baixado:false,cap:'Foto: mãos do casal no meio da volta do Chapéu'},
+    {id:'m4',tipo:'Vídeo',titulo:'Sequência de estudo da Branca',passo:'',nivel:'branca',combo:'ex-branca-1',desc:'Sequência completa da combinação de exemplo.',origem:'comunidade',exemplo:true,baixado:false,cap:'Vídeo: casal executando a sequência em loop'}
+  ],
+  eventos:[
+    {id:'e1',nome:'Baile de exemplo',data:iso(addDays(4)),hora:'21:00',local:'Local a definir',cidade:'Belo Horizonte',tipo:'Baile',desc:'Evento de demonstração para o protótipo.',link:'',obs:'',exemplo:true},
+    {id:'e2',nome:'Workshop de exemplo',data:iso(addDays(11)),hora:'14:00',local:'Local a definir',cidade:'Belo Horizonte',tipo:'Workshop',desc:'Evento de demonstração para o protótipo.',link:'',obs:'',exemplo:true},
+    {id:'e3',nome:'Aula aberta de exemplo',data:iso(addDays(11)),hora:'19:30',local:'Local a definir',cidade:'Belo Horizonte',tipo:'Aula',desc:'Evento de demonstração para o protótipo.',link:'',obs:'',exemplo:true},
+    {id:'e4',nome:'Festival de exemplo',data:iso(addDays(26)),hora:'10:00',local:'Local a definir',cidade:'Belo Horizonte',tipo:'Festival',desc:'Evento de demonstração para o protótipo.',link:'',obs:'',exemplo:true},
+    {id:'e0',nome:'Baile de exemplo (passado)',data:iso(addDays(-9)),hora:'21:00',local:'Local a definir',cidade:'Belo Horizonte',tipo:'Baile',desc:'Evento passado, fora da lista principal.',link:'',obs:'',exemplo:true}
+  ],
+  fila:[
+    {id:'f1',tipo:'Mídia',titulo:'Vídeo do Panamericano',autor:'Colaborador A',data:iso(addDays(-1)),ref:'panamericano',estado:'pendente',exemplo:true},
+    {id:'f2',tipo:'Combinação',titulo:'Sequência com Manivela e Ninja',autor:'Colaborador B',data:iso(addDays(-2)),ref:'',estado:'pendente',exemplo:true,passos:['manivela','ninja','costas-com-costas']},
+    {id:'f3',tipo:'Evento',titulo:'Baile de exemplo enviado',autor:'Colaborador A',data:iso(addDays(-3)),ref:'',estado:'pendente',exemplo:true}
+  ],
+  versoes:{}, pendRes:{},
+  ui:{q:'',fNivel:[],fCat:[],fOrigem:[],agenda:'lista',agTipo:'',calMes:null,calDia:null,speed:'1x',loop:false,playing:false,mFiltro:{nivel:'',tipo:''},
+      form:null,errs:{},dialog:null,snack:null,loaded:{},seen:{}}
+};
+
+/* ================= utilidades ================= */
+var $app = document.getElementById('app');
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function ic(n,cls){return '<span class="ms'+(cls?' '+cls:'')+'" aria-hidden="true">'+n+'</span>';}
+function norm(s){return String(s).normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().trim();}
+function slug(s){return norm(s).replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
+function nivel(id){return NIVEIS.find(function(n){return n.id===id;});}
+function nIdx(id){return NIVEIS.findIndex(function(n){return n.id===id;});}
+function passo(id){return PASSOS.find(function(p){return p.id===id;});}
+function exame(id){return EXAMES.find(function(e){return e.id===id;});}
+function exameSaida(nid){return EXAMES.find(function(e){return e.de===nid;});}
+function selo(nid,txt){var n=nivel(nid);return '<span class="selo '+n.cor+'">'+esc(txt||n.nome)+'</span>';}
+var ORIG={oficial:'Oficial',comunidade:'Comunidade',pessoal:'Pessoal',revisao:'Em revisão'};
+function origem(o){return '<span class="origem '+o+'">'+(o==='revisao'?ic('schedule','sm'):'')+ORIG[o]+'</span>';}
+function exTag(){return '<span class="exemplo">Exemplo</span>';}
+function foto(cap,r){return '<figure class="foto '+(r||'r45')+'">'+ic('photo_camera','cam')+'<figcaption>'+esc(cap)+'</figcaption></figure>';}
+function two(n){return String(n).padStart(2,'0');}
+var MESES=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+var MES3=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+var DOW=['dom','seg','ter','qua','qui','sex','sáb'];
+function pd(s){var a=s.split('-');return new Date(+a[0],+a[1]-1,+a[2]);}
+function dataLonga(s){var d=pd(s);return DOW[d.getDay()]+', '+d.getDate()+' de '+MESES[d.getMonth()];}
+function dataCurta(s){if(!s)return '';var d=pd(s);return d.getDate()+' '+MES3[d.getMonth()]+' '+d.getFullYear();}
+function hojeISO(){return iso(addDays(0));}
+function isWide(){return window.matchMedia('(min-width:1200px)').matches;}
+function podeEditar(){return S.perfil==='curador'||S.perfil==='colaborador';}
+function passosDoNivel(nid,cat){return PASSOS.filter(function(p){return p.niveis.indexOf(nid)>=0&&(!cat||p.cat===cat)&&p.origem!=='revisao';});}
+function combosComPasso(pid){return S.combos.filter(function(c){return c.passos.indexOf(pid)>=0;});}
+function critKeys(e){var k=[];e.grupos.forEach(function(g,gi){g.itens.forEach(function(it,ii){k.push(e.id+':'+gi+':'+ii);});});return k;}
+function progresso(nid){
+  var ps=passosDoNivel(nid),ex=exameSaida(nid),ks=ex?critKeys(ex):[];
+  var feitos=ps.filter(function(p){return S.status[p.id]==='revisado';}).length+ks.filter(function(k){return S.crit[k];}).length;
+  var total=ps.length+ks.length;
+  return {feitos:feitos,total:total,pct:total?Math.round(feitos/total*100):0,passos:ps.length,passosFeitos:ps.filter(function(p){return S.status[p.id]==='revisado';}).length,crit:ks.length,critFeitos:ks.filter(function(k){return S.crit[k];}).length};
+}
+function pendente(id){return S.pendRes[id]!=null?null:PEND.find(function(p){return p.id===id;});}
+function pendValor(id){var p=PEND.find(function(x){return x.id===id;});return S.pendRes[id]!=null?p.ops[S.pendRes[id]]:null;}
+
+/* ================= rotas ================= */
+var MAIN = [
+  {id:'inicio',label:'Início',icon:'home'},
+  {id:'trilha',label:'Colares',icon:'school'},
+  {id:'passos',label:'Passos',icon:'library_books'},
+  {id:'exames',label:'Exames',icon:'assignment'},
+  {id:'mais',label:'Mais',icon:'menu'}
+];
+var EXTRA = [
+  {id:'combinacoes',label:'Combinações',icon:'format_list_numbered'},
+  {id:'midias',label:'Fotos e vídeos',icon:'play_circle'},
+  {id:'agenda',label:'Agenda',icon:'event'},
+  {id:'sobre',label:'Sobre os colares',icon:'info'},
+  {id:'evolucao',label:'Meu colar e evolução',icon:'trending_up'},
+  {id:'perfil',label:'Perfil e configurações',icon:'account_circle'}
+];
+var CUR = [
+  {id:'revisao',label:'Revisão',icon:'fact_check'},
+  {id:'gerir',label:'Gerir conteúdo',icon:'tune'}
+];
+function route(){
+  var h=(location.hash||'').replace(/^#/,'')||'inicio';
+  var m=[
+    ['nivel-',function(r){return {v:'nivel',id:r};}],
+    ['passo-editar-',function(r){return {v:'passoForm',id:r};}],
+    ['passo-',function(r){return r==='novo'?{v:'passoForm'}:{v:'passo',id:r};}],
+    ['exame-',function(r){return {v:'exame',id:r};}],
+    ['gerir-exame-',function(r){return {v:'gerirExame',id:r};}],
+    ['combinacao-nova',function(){return {v:'comboForm'};}],
+    ['combinacao-editar-',function(r){return {v:'comboForm',id:r};}],
+    ['combinacao-',function(r){return {v:'combo',id:r};}],
+    ['midia-',function(r){return {v:'midia',id:r};}],
+    ['revisao-',function(r){return {v:'revisaoItem',id:r};}],
+    ['evento-novo',function(){return {v:'eventoForm'};}],
+    ['evento-',function(r){return {v:'evento',id:r};}]
+  ];
+  for(var i=0;i<m.length;i++){if(h.indexOf(m[i][0])===0)return m[i][1](h.slice(m[i][0].length));}
+  return {v:h};
+}
+function sectionOf(r){
+  var v=r.v;
+  if(['inicio'].indexOf(v)>=0)return 'inicio';
+  if(['trilha','nivel','sobre','evolucao'].indexOf(v)>=0)return v==='sobre'||v==='evolucao'?'mais':'trilha';
+  if(['passos','passo','passoForm'].indexOf(v)>=0)return 'passos';
+  if(['exames','exame','regras'].indexOf(v)>=0)return 'exames';
+  return 'mais';
+}
+function go(h){if(location.hash==='#'+h)render(true);else location.hash=h;}
+
+/* ================= casca ================= */
+function navHtml(cur){
+  var items=MAIN.map(function(n){return '<li style="display:contents"><a class="nav-item" href="#'+n.id+'"'+(cur===n.id?' aria-current="page"':'')+'><span class="nav-ind">'+ic(n.icon)+'</span><span class="nav-label">'+n.label+'</span></a></li>';}).join('');
+  var r=route();
+  var extra=EXTRA.concat(S.perfil==='curador'?CUR:[]).map(function(n){var on=r.v===n.id||(n.id==='revisao'&&r.v==='revisaoItem')||(n.id==='gerir'&&r.v==='gerirExame')||(n.id==='combinacoes'&&(r.v==='combo'||r.v==='comboForm'))||(n.id==='midias'&&r.v==='midia')||(n.id==='agenda'&&(r.v==='evento'||r.v==='eventoForm'));return '<a class="nav-item" href="#'+n.id+'"'+(on?' aria-current="page"':'')+'><span class="nav-ind">'+ic(n.icon)+'</span><span class="nav-label">'+n.label+(n.id==='revisao'?' · '+S.fila.filter(function(f){return f.estado==='pendente';}).length:'')+'</span></a>';}).join('');
+  return '<nav class="nav" aria-label="Navegação principal">'+
+    '<div class="nav-brand rail" aria-hidden="true">GF</div>'+
+    '<div class="nav-brand drawer"><span class="brand-mark">GF</span><span><span class="brand-name">Guia do Forró</span><br><span class="small muted">Guia de estudos dos colares</span></span></div>'+
+    '<ul class="nav-list">'+items+'</ul>'+
+    '<div class="nav-extra">'+extra+'</div>'+
+    '<div class="nav-foot"><span class="eyebrow">Ver como</span>'+perfilSeg()+'<button class="btn outlined" data-a="tema">'+ic(temaAtual()==='dark'?'light_mode':'dark_mode')+(temaAtual()==='dark'?'Tema claro':'Tema escuro')+'</button><span class="small muted">Protótipo com dados simulados. Nada é salvo ao recarregar.</span></div>'+
+  '</nav>';
+}
+function perfilSeg(){return '<div class="seg" role="group" aria-label="Perfil de demonstração">'+[['aluno','Aluno'],['colaborador','Colab.'],['curador','Curador']].map(function(p){return '<button data-a="perfil" data-v="'+p[0]+'" aria-pressed="'+(S.perfil===p[0])+'">'+p[1]+'</button>';}).join('')+'</div>';}
+function temaAtual(){var t=document.documentElement.getAttribute('data-theme');if(t)return t;return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+function topbar(t,back,acts){return '<header class="topbar"><div class="topbar-inner">'+(back?'<button class="icon-btn on" data-a="voltar" data-v="'+back+'" aria-label="Voltar">'+ic('arrow_back')+'</button>':'<span style="width:12px"></span>')+'<h1 class="t">'+esc(t)+'</h1>'+(acts||'')+'</div></header>';}
+function themeBtn(){return '<button class="icon-btn mobile-only" data-a="tema" aria-label="Alternar tema">'+ic(temaAtual()==='dark'?'light_mode':'dark_mode')+'</button>';}
+function offlineStrip(){return S.offline?'<div class="offline-strip" role="status">'+ic('cloud_off','sm')+'Sem conexão. Você está vendo o conteúdo baixado em '+esc(dataCurta(hojeISO()))+', 07:10. Cadastros e envios ficam indisponíveis.</div>':'';}
+function needNet(){return S.offline?' disabled title="Precisa de internet"':'';}
+
+/* ================= telas ================= */
+var V = {};
+
+/* ---------- Acesso ---------- */
+function authShell(content){
+  return '<div class="auth view-enter"><section class="auth-art"><div><span class="brand-mark" style="background:var(--on-brand);color:var(--brand-green)">GF</span></div><div style="display:flex;flex-direction:column;gap:20px"><p class="eyebrow" style="color:inherit;opacity:.8">Guia de estudos · Forró</p><h1 class="display">Do transparente ao vermelho.</h1><p class="body-l" style="margin:0;max-width:40ch">Passos, combinações e critérios de exame de cada colar, num só lugar, até no meio do treino.</p></div>'+foto('Foto: roda cheia no espaço livre, casais girando, luz de fim de tarde','r169')+'</section><section class="auth-form">'+content+'</section></div>';
+}
+V.entrada=function(){
+  var e=S.ui.errs;
+  return authShell('<div><p class="eyebrow">Entrar</p><h2 class="h1" style="margin-top:8px">Bem-vindo de volta</h2></div>'+
+    '<form class="form" data-f="entrar" novalidate>'+
+    field('email','E-mail','<input class="input" id="email" type="email" autocomplete="email" value="'+esc(fv('email'))+'">',e.email)+
+    field('senha','Senha','<input class="input" id="senha" type="password" autocomplete="current-password">',e.senha)+
+    '<button class="btn filled lg" type="submit">Entrar</button>'+
+    '<p class="small muted" style="margin:0">Ainda não tem conta? <a href="#criar-conta" style="color:var(--primary)">Criar conta</a></p>'+
+    '</form>');
+};
+V['criar-conta']=function(){
+  var e=S.ui.errs;
+  return authShell('<div><p class="eyebrow">Criar conta · 1 de 2</p><h2 class="h1" style="margin-top:8px">Sua conta</h2><p class="muted" style="margin:8px 0 0">Você entra como aluno. O curador pode liberar o envio de conteúdo depois.</p></div>'+
+    '<form class="form" data-f="criar" novalidate>'+
+    field('nome','Nome','<input class="input" id="nome" autocomplete="name" value="'+esc(fv('nome'))+'">',e.nome)+
+    field('email','E-mail','<input class="input" id="email" type="email" autocomplete="email" value="'+esc(fv('email'))+'">',e.email)+
+    field('senha','Senha','<input class="input" id="senha" type="password" autocomplete="new-password">',e.senha,'Mínimo de 8 caracteres.')+
+    '<button class="btn filled lg" type="submit">Continuar</button>'+
+    '<p class="small muted" style="margin:0">Já tem conta? <a href="#entrada" style="color:var(--primary)">Entrar</a></p></form>');
+};
+V['escolher-nivel']=function(){
+  var sel=S.ui.pick||S.nivel;
+  return authShell('<div><p class="eyebrow">Criar conta · 2 de 2</p><h2 class="h1" style="margin-top:8px">Qual é o seu colar hoje?</h2><p class="muted" style="margin:8px 0 0">Usamos isso para mostrar seu próximo exame. É um registro pessoal: o oficial fica na danca.com.</p></div>'+
+    '<div class="colar-pick" role="group" aria-label="Nível atual">'+NIVEIS.map(function(n,i){return '<button data-a="pick" data-v="'+n.id+'" aria-pressed="'+(sel===n.id)+'"><span class="num muted">'+two(i+1)+'</span>'+selo(n.id)+'</button>';}).join('')+'</div>'+
+    '<div class="btn-row"><button class="btn filled lg" data-a="concluirCadastro">Começar a estudar</button><button class="btn text" data-a="pularNivel">Pular por enquanto</button></div>');
+};
+
+/* ---------- Início ---------- */
+V.inicio=function(){
+  var n=S.nivel?nivel(S.nivel):null, pr=n?progresso(n.id):null, ex=n?exameSaida(n.id):null;
+  var col=n?COLARES[n.cor]:null;
+  var proximos=S.eventos.filter(function(e){return e.data>=hojeISO();}).sort(function(a,b){return a.data<b.data?-1:1;}).slice(0,2);
+  var ultimo=S.ui.lastPasso?passo(S.ui.lastPasso):passo('chapeu');
+  var hero = n ?
+    '<section class="cover view-enter"><div class="cover-text"><p class="eyebrow">Meu colar · '+two(nIdx(n.id)+1)+' de 08</p><h2 class="display">'+esc(col.palavra)+'.</h2>'+
+    '<p class="body-l muted measure" style="margin:0">Você está no colar '+esc(n.nome)+'. '+(ex?'Próximo exame: '+esc(n.nome)+' → '+esc(nivel(ex.para).nome)+'.':'Este é o último colar da trilha.')+'</p>'+
+    '<div class="card flat" style="background:var(--primary-container);color:var(--on-primary-container)"><div class="row"><div class="ring" style="--p:'+pr.pct+'"><span>'+pr.pct+'%</span></div><div class="grow"><p class="title">Meu checklist do nível</p><p class="small" style="margin:2px 0 0">'+pr.passosFeitos+' de '+pr.passos+' passos e '+pr.critFeitos+' de '+pr.crit+' critérios revisados</p></div></div><div class="btn-row"><a class="btn filled" href="#nivel-'+n.id+'">Abrir colar '+esc(n.nome)+'</a>'+(ex?'<a class="btn text" href="#exame-'+ex.id+'">Ver critérios</a>':'')+'</div></div></div>'+
+    foto(col.foto,'r45')+'</section>'
+    : '<section class="cover"><div class="cover-text"><p class="eyebrow">Bem-vindo</p><h2 class="display">Do transparente ao vermelho.</h2><div class="banner info">'+ic('info')+'<div class="grow"><p class="title">Informe seu colar atual</p><p class="small" style="margin:2px 0 8px">Assim mostramos seu próximo exame e seu checklist.</p><a class="btn tonal" href="#escolher-nivel">Informar colar</a></div></div></div>'+foto('Foto: roda cheia no espaço livre','r45')+'</section>';
+  var atalhos=[['nivel-'+(S.nivel||'transparente'),'school','Meu colar'],['passos','library_books','Biblioteca de passos'],['combinacoes','format_list_numbered','Combinações'],['exames','assignment','Exames'],['midias','play_circle','Fotos e vídeos'],['agenda','event','Agenda'],['sobre','info','Sobre os colares']];
+  return topbar('Guia do Forró',null,themeBtn()+'<a class="icon-btn" href="#perfil" aria-label="Perfil">'+ic('account_circle')+'</a>')+
+  '<div class="page">'+
+    '<a class="search" href="#passos" style="text-decoration:none">'+ic('search')+'<span class="muted" style="font-size:16px">Buscar passo</span></a>'+
+    '<nav class="atalhos" aria-label="Atalhos">'+atalhos.map(function(a){return '<a class="atalho" href="#'+a[0]+'">'+ic(a[1])+'<span>'+a[2]+'</span>'+(a[2]==='Meu colar'&&n?selo(n.id):'')+'</a>';}).join('')+'</nav>'+
+    hero+
+    (ultimo?'<section class="section"><div class="section-head"><h2 class="h2">Continue de onde parou</h2><a class="btn text" href="#passos">Biblioteca</a></div><div class="grid2">'+passoCard(ultimo)+(ex?'<a class="card link" href="#exame-'+ex.id+'"><p class="eyebrow">Próximo exame</p><p class="h3">'+esc(nivel(ex.de).nome)+' → '+esc(nivel(ex.para).nome)+'</p><p class="small muted" style="margin:0">'+ex.grupos.map(function(g){return g.nome;}).join(', ')+'</p></a>':'')+'</div></section>':'')+
+    '<section class="section"><div class="section-head"><h2 class="h2">Próximos eventos em BH</h2><a class="btn text" href="#agenda">Ver agenda</a></div><div class="grid2">'+(proximos.length?proximos.map(eventoCard).join(''):emptyBox('Nenhum evento nos próximos dias','A agenda mostra bailes, aulas e workshops de Belo Horizonte.'))+'</div></section>'+
+  '</div>';
+};
+
+/* ---------- Trilha ---------- */
+V.trilha=function(){
+  return topbar('Trilha de colares',null,themeBtn())+'<div class="page">'+
+  '<section class="cover"><div class="cover-text"><p class="eyebrow">8 níveis · 5 colares</p><h2 class="h1">A ordem do manual, do primeiro dia à vermelha.</h2><p class="muted measure" style="margin:0">Azul e Preta se dividem em rodas intermediária e avançada, cada uma com exame próprio. Níveis sem passos mostram “Conteúdo a cadastrar”.</p></div></section>'+
+  '<div class="trilha">'+NIVEIS.map(function(n,i){
+    var ps=passosDoNivel(n.id),atual=S.nivel===n.id,pr=progresso(n.id);
+    return '<a class="trilha-item'+(atual?' atual':'')+'" href="#nivel-'+n.id+'"><span class="n">'+two(i+1)+'</span><span style="display:flex;flex-direction:column;gap:8px;min-width:0"><span class="meta-row"><span class="nome">'+esc(n.nome)+'</span>'+(atual?'<span class="pill">Seu nível</span>':'')+'</span><span class="meta-row">'+selo(n.id)+'<span class="small muted">'+(ps.length?ps.length+' passos · '+passosDoNivel(n.id,'Fechado').length+' fechados, '+passosDoNivel(n.id,'Aberto').length+' abertos':'Conteúdo a cadastrar')+(ps.length&&pr.total?' · '+pr.pct+'% revisado':'')+'</span></span></span>'+ic('chevron_right')+'</a>';}).join('')+'</div>'+
+  '</div>';
+};
+
+/* ---------- Nível ---------- */
+V.nivel=function(r){
+  var n=nivel(r.id); if(!n)return notFound();
+  var i=nIdx(n.id),col=COLARES[n.cor],pr=progresso(n.id),ex=exameSaida(n.id);
+  var fech=passosDoNivel(n.id,'Fechado'),abert=passosDoNivel(n.id,'Aberto');
+  var combos=S.combos.filter(function(c){return c.nivel===n.id;});
+  var mids=S.midias.filter(function(m){return m.nivel===n.id;});
+  var sub=['azul-intermediaria','azul-avancada','preta-avancada'].indexOf(n.id)>=0;
+  var prev=NIVEIS[i-1],next=NIVEIS[i+1];
+  return topbar('Colar '+n.nome,'trilha',themeBtn())+'<div class="page">'+
+  '<section class="nivel-hero th-'+n.cor+' view-enter"><span class="big-num" aria-hidden="true">'+two(i+1)+'</span>'+
+    '<div style="display:flex;flex-direction:column;gap:16px;position:relative">'+'<div class="meta-row">'+selo(n.id)+'<span class="small muted">Nível '+two(i+1)+' de 08</span></div>'+
+    '<h2 class="display">'+esc(col.palavra)+'</h2>'+
+    '<p class="body-l measure" style="margin:0">'+esc(col.texto.split('. ')[0])+'.</p>'+
+    '<p class="small muted" style="margin:0">'+(sub?'Significado do '+esc(col.nome)+'. ':'')+'Fonte: '+FONTE+'</p>'+
+    (pr.total?'<div style="display:flex;flex-direction:column;gap:6px;max-width:420px"><div class="row small"><span class="grow">Meu checklist</span><b>'+pr.passosFeitos+' de '+pr.passos+' passos revisados</b></div><div class="small muted">'+pr.critFeitos+' de '+pr.crit+' critérios do exame revisados. Só para estudo, não indica aprovação.</div><div class="progress"><i style="width:'+pr.pct+'%"></i></div></div>':'')+
+    '</div>'+foto(col.foto,'r45')+'</section>'+
+  (S.nivel!==n.id?'<div class="banner info">'+ic('flag')+'<div class="grow small">Este não é o seu nível atual.</div><button class="btn text" data-a="setNivel" data-v="'+n.id+'">É meu colar</button></div>':'')+
+  passosSection('Passos fechados',fech,n)+
+  passosSection('Passos abertos',abert,n)+
+  '<section class="section"><div class="section-head"><h2 class="h2">Combinações da roda</h2><a class="btn text" href="#combinacao-nova">'+ic('add')+'Montar</a></div>'+(combos.length?'<div class="grid2">'+combos.map(comboCard).join('')+'</div>':emptyBox('Conteúdo a cadastrar','Nenhuma combinação da roda '+n.nome+' foi cadastrada ainda.'))+'</section>'+
+  '<section class="section"><div class="section-head"><h2 class="h2">Exame de saída</h2></div>'+(ex?'<a class="card link" href="#exame-'+ex.id+'"><div class="row"><span class="grow"><span class="eyebrow">'+esc(n.nome)+' → '+esc(nivel(ex.para).nome)+'</span><br><span class="h3">'+ex.grupos.map(function(g){return g.nome;}).join(' · ')+'</span></span>'+ic('chevron_right')+'</div><span class="small muted">'+(pr.crit?pr.critFeitos+' de '+pr.crit+' critérios revisados':'')+'</span></a>':emptyBox('Último colar da trilha','Não há exame depois da Vermelha.'))+'</section>'+
+  '<section class="section"><div class="section-head"><h2 class="h2">Fotos e vídeos</h2><a class="btn text" href="#midias">Galeria</a></div>'+(mids.length?'<div class="grid3">'+mids.map(midiaCard).join('')+'</div>':emptyBox('Conteúdo a cadastrar','Nenhuma foto ou vídeo ligado a este nível.'))+'</section>'+
+  '<section class="section"><div class="section-head"><h2 class="h2">Minhas observações</h2><span class="small muted">Só você vê</span></div><div class="field"><label for="nota-nivel">Observações sobre o colar '+esc(n.nome)+'</label><textarea class="textarea" id="nota-nivel" data-in="notaNivel" data-v="'+n.id+'" placeholder="Escreva dificuldades e o que quer praticar">'+esc(S.notaNivel[n.id]||'')+'</textarea></div></section>'+
+  '<nav class="btn-row" aria-label="Outros níveis" style="justify-content:space-between;border-top:1px solid var(--outline-variant);padding-top:16px">'+(prev?'<a class="btn outlined" href="#nivel-'+prev.id+'">'+ic('arrow_back')+esc(prev.nome)+'</a>':'<span></span>')+(next?'<a class="btn outlined" href="#nivel-'+next.id+'">'+esc(next.nome)+ic('arrow_forward')+'</a>':'')+'</nav>'+
+  '</div>';
+};
+function passosSection(t,ps,n){
+  return '<section class="section"><div class="section-head"><h2 class="h2">'+t+' <span class="muted" style="font-weight:400">· '+ps.length+'</span></h2>'+(podeEditar()&&ps.length===0?'<a class="btn text" href="#passo-novo">'+ic('add')+'Cadastrar</a>':'')+'</div>'+(ps.length?'<div class="grid2">'+ps.map(function(p){return passoCard(p);}).join('')+'</div>':emptyBox('Conteúdo a cadastrar','Os passos '+t.toLowerCase().replace('passos ','')+' do colar '+n.nome+' ainda não foram cadastrados.'))+'</section>';
+}
+function statusLabel(s){return s==='revisado'?'Revisado':s==='revisando'?'Revisando':'Não revisado';}
+function passoCard(p,selected){
+  var st=S.status[p.id]||'nao';
+  return '<a class="card link passo-card'+(selected?' sel':'')+'" href="#passo-'+p.id+'"><div class="row" style="align-items:flex-start"><p class="nome grow">'+esc(p.nome)+'</p><span class="status-dot '+st+'">'+statusLabel(st)+'</span></div><p class="small muted">'+esc(p.desc)+'</p><div class="meta-row">'+p.niveis.map(function(x){return selo(x);}).join('')+'<span class="tag">'+p.cat+'</span>'+origem(p.origem)+(p.pisadas?'<span class="small muted">'+esc(p.pisadas)+' pisadas</span>':'')+'</div></a>';
+}
+function emptyBox(t,d,act){return '<div class="empty"><p class="h3" style="margin:0">'+esc(t)+'</p>'+(d?'<p class="small muted" style="margin:0">'+esc(d)+'</p>':'')+(act||'')+'</div>';}
+
+/* ---------- Sobre ---------- */
+V.sobre=function(){
+  var ordem=['transparente','branca','azul','preta','vermelha'];
+  return topbar('Sobre os colares','mais',themeBtn())+'<div class="page">'+
+  '<section class="cover"><div class="cover-text"><p class="eyebrow">Fonte: '+FONTE+'</p><h2 class="display">Cinco colares, cinco valores.</h2><p class="muted measure" style="margin:0">Os significados abaixo são do manual. As rodas intermediária e avançada da Azul e da Preta seguem o significado do colar.</p></div></section>'+
+  ordem.map(function(c,i){var k=COLARES[c];return '<article class="colar-art"><span class="n">'+two(i+1)+'</span><div style="display:flex;flex-direction:column;gap:14px;min-width:0"><div class="row"><span class="disc '+c+'"></span><div><p class="eyebrow">'+esc(k.nome)+'</p><h2 class="h1">'+esc(k.palavra)+'</h2></div></div><p class="quote">'+esc(k.texto)+'</p></div>'+foto(k.foto,'r45')+'</article>';}).join('')+
+  '</div>';
+};
+
+/* ---------- Biblioteca ---------- */
+function filtrar(){
+  var q=norm(S.ui.q),f=S.ui;
+  return PASSOS.filter(function(p){
+    if(p.origem==='revisao'&&S.perfil==='aluno')return false;
+    if(q&&norm(p.nome).indexOf(q)<0)return false;
+    if(f.fNivel.length&&!p.niveis.some(function(n){return f.fNivel.indexOf(n)>=0;}))return false;
+    if(f.fCat.length&&f.fCat.indexOf(p.cat)<0)return false;
+    if(f.fOrigem.length&&f.fOrigem.indexOf(p.origem)<0)return false;
+    return true;
+  });
+}
+function chip(a,v,label,on){return '<button class="chip" data-a="'+a+'" data-v="'+esc(v)+'" aria-pressed="'+on+'">'+(on?ic('check'):'')+esc(label)+'</button>';}
+function bibliotecaList(selId){
+  var f=S.ui,res=filtrar();
+  if(S.falha)return erroBox('passos');
+  if(!S.ui.loaded.passos)return skeletonList();
+  return '<div class="search">'+ic('search')+'<label class="sr" for="busca">Buscar passo</label><input id="busca" data-in="q" placeholder="Buscar passo pelo nome" value="'+esc(f.q)+'" autocomplete="off">'+(f.q?'<button class="icon-btn" data-a="limparBusca" aria-label="Limpar busca">'+ic('close')+'</button>':'')+'</div>'+
+  '<div style="display:flex;flex-direction:column;gap:10px"><span class="eyebrow">Nível</span><div class="chips">'+NIVEIS.map(function(n){return chip('fNivel',n.id,n.nome,f.fNivel.indexOf(n.id)>=0);}).join('')+'</div>'+
+  '<span class="eyebrow">Categoria e origem</span><div class="chips">'+['Fechado','Aberto'].map(function(c){return chip('fCat',c,c,f.fCat.indexOf(c)>=0);}).join('')+['oficial','comunidade','pessoal'].map(function(o){return chip('fOrigem',o,ORIG[o],f.fOrigem.indexOf(o)>=0);}).join('')+'</div></div>'+
+  '<div class="row"><span class="grow small muted" role="status">'+res.length+(res.length===1?' passo':' passos')+'</span>'+(f.fNivel.length||f.fCat.length||f.fOrigem.length||f.q?'<button class="btn text" data-a="limparFiltros">Limpar filtros</button>':'')+'</div>'+
+  (res.length?'<div class="list">'+res.map(function(p){return passoCard(p,p.id===selId);}).join('')+'</div>':emptyBox('Nenhum passo encontrado','Tente outro nome ou remova algum filtro.','<div><button class="btn tonal" data-a="limparFiltros">Limpar filtros</button></div>'));
+}
+V.passos=function(){
+  ensureLoaded('passos');
+  var acts=themeBtn()+(podeEditar()?'<a class="icon-btn wide-only" href="#passo-novo" aria-label="Cadastrar passo">'+ic('add')+'</a>':'');
+  var head='<section class="cover"><div class="cover-text"><p class="eyebrow">Biblioteca de passos</p><h2 class="h1">'+PASSOS.filter(function(p){return p.origem!=='revisao';}).length+' passos, um cadastro cada.</h2></div></section>';
+  if(isWide()){
+    return topbar('Biblioteca de passos',null,acts)+'<div class="page">'+head+'<div class="ld"><div class="section">'+bibliotecaList(null)+'</div><div class="ld-detail">'+emptyBox('Escolha um passo','O detalhe aparece aqui, ao lado da lista.')+'</div></div></div>'+fab();
+  }
+  return topbar('Biblioteca de passos',null,acts)+'<div class="page">'+head+'<div class="section">'+bibliotecaList(null)+'</div></div>'+fab();
+};
+function fab(){return podeEditar()?'<a class="fab" href="#passo-novo" '+(S.offline?'aria-disabled="true" data-a="offlineBlock"':'')+'>'+ic('add')+'Cadastrar passo</a>':'';}
+function skeletonList(){return '<div class="list" aria-busy="true" aria-label="Carregando">'+[1,2,3,4].map(function(){return '<div class="sk" style="height:118px"></div>';}).join('')+'</div>';}
+function erroBox(k){return '<div class="banner warn" role="alert">'+ic('error')+'<div class="grow"><p class="title">Não foi possível carregar</p><p class="small" style="margin:2px 0 10px">A conexão falhou. Verifique a internet e tente de novo.</p><button class="btn filled" data-a="retry" data-v="'+k+'">Tentar de novo</button></div></div>';}
+function ensureLoaded(k){if(!S.ui.loaded[k]&&!S.ui.loading){S.ui.loading=true;setTimeout(function(){S.ui.loaded[k]=true;S.ui.loading=false;render(false);},650);}}
+
+/* ---------- Detalhe do passo ---------- */
+function passoDetalhe(p){
+  var st=S.status[p.id]||'nao',combs=combosComPasso(p.id),mids=S.midias.filter(function(m){return m.passo===p.id;});
+  var crits=[];EXAMES.forEach(function(e){e.grupos.forEach(function(g,gi){g.itens.forEach(function(it,ii){if(it.liga&&it.liga.indexOf(p.id)>=0)crits.push({e:e,g:g,key:e.id+':'+gi+':'+ii});});});});
+  var acts='';
+  if(S.perfil==='curador')acts='<div class="btn-row"><a class="btn outlined" href="#passo-editar-'+p.id+'"'+(S.offline?' aria-disabled="true" data-a="offlineBlock"':'')+'>'+ic('edit')+'Editar</a><button class="btn text" data-a="excluirPasso" data-v="'+p.id+'"'+needNet()+' style="color:var(--error)">'+ic('delete')+'Excluir</button></div>';
+  else if(S.perfil==='colaborador')acts='<div class="btn-row"><a class="btn outlined" href="#passo-editar-'+p.id+'"'+(S.offline?' aria-disabled="true" data-a="offlineBlock"':'')+'>'+ic('edit')+'Sugerir edição</a></div>';
+  return '<div class="section view-enter">'+
+    '<div class="meta-row">'+p.niveis.map(function(x){return selo(x);}).join('')+origem(p.origem)+'<span class="tag">'+p.cat+'</span></div>'+
+    '<h2 class="display" style="font-size:clamp(40px,7vw,72px)">'+esc(p.nome)+'</h2>'+acts+
+    (p.origem==='revisao'?'<div class="banner warn">'+ic('schedule')+'<div class="small">Em revisão. Visível só para você e para o curador até a aprovação.</div></div>':'')+
+    '<section class="section"><p class="eyebrow">Execução</p><p class="body-l measure" style="margin:0">'+esc(p.desc)+'</p><dl class="kv"><dt>Pisadas</dt><dd>'+(p.pisadas?esc(p.pisadas):'<span class="muted">A cadastrar</span>')+'</dd><dt>Categoria</dt><dd>'+p.cat+'</dd><dt>Níveis</dt><dd>'+p.niveis.map(function(x){return nivel(x).nome;}).join(', ')+'</dd></dl></section>'+
+    '<section class="section"><div class="section-head"><h3 class="h3">Variações</h3></div>'+(p.variacoes.length?'<div class="list">'+p.variacoes.map(function(v){return '<div class="card flat"><p style="margin:0">'+esc(v.t)+'</p>'+(v.liga&&passo(v.liga)?'<a class="btn text" style="align-self:flex-start;padding:0" href="#passo-'+v.liga+'">Ver '+esc(passo(v.liga).nome)+ic('arrow_forward')+'</a>':'')+'</div>';}).join('')+'</div>':'<p class="muted" style="margin:0">A cadastrar</p>')+'</section>'+
+    '<section class="section"><div class="section-head"><h3 class="h3">Meu estudo</h3><span class="small muted">Só você vê</span></div>'+
+    '<div class="seg" role="group" aria-label="Status de estudo">'+[['nao','Não revisado'],['revisando','Revisando'],['revisado','Revisado']].map(function(o){return '<button data-a="status" data-id="'+p.id+'" data-v="'+o[0]+'" aria-pressed="'+(st===o[0])+'">'+(st===o[0]?ic('check'):'')+o[1]+'</button>';}).join('')+'</div>'+
+    '<div class="field"><label for="nota-'+p.id+'">Minha observação</label><textarea class="textarea" id="nota-'+p.id+'" data-in="nota" data-v="'+p.id+'" placeholder="Escreva o que precisa praticar">'+esc(S.notas[p.id]||'')+'</textarea><span class="help">Separada da descrição oficial. Salva ao sair do campo.</span></div></section>'+
+    '<section class="section"><div class="section-head"><h3 class="h3">Fotos e vídeos</h3>'+(podeEditar()?'<a class="btn text" href="#enviar-midia" data-a="midiaPara" data-v="'+p.id+'">'+ic('upload')+'Enviar</a>':'')+'</div>'+(mids.length?'<div class="grid2">'+mids.map(midiaCard).join('')+'</div>':emptyBox('Nenhum vídeo ainda','Envie um vídeo curto mostrando a execução. Antes de enviar, confirme que quem aparece concorda.'))+'</section>'+
+    '<section class="section"><div class="section-head"><h3 class="h3">Critérios de exame relacionados</h3></div>'+(crits.length?'<div class="list">'+crits.map(function(c){return '<a class="card link" href="#exame-'+c.e.id+'"><span class="eyebrow">'+esc(nivel(c.e.de).nome)+' → '+esc(nivel(c.e.para).nome)+' · '+esc(c.g.nome)+'</span><span class="small">'+esc(c.g.itens[+c.key.split(':')[2]].t)+'</span></a>';}).join('')+'</div>':emptyBox('Nenhum critério ligado','O curador liga itens do manual a este passo quando há correspondência.'))+'</section>'+
+    '<section class="section"><div class="section-head"><h3 class="h3">Combinações em que aparece</h3></div>'+(combs.length?'<div class="list">'+combs.map(comboCard).join('')+'</div>':emptyBox('Ainda não está em nenhuma combinação',null))+'</section>'+
+  '</div>';
+}
+V.passo=function(r){
+  var p=passo(r.id); if(!p)return notFound();
+  S.ui.lastPasso=p.id;
+  if(isWide()){
+    ensureLoaded('passos');
+    return topbar('Biblioteca de passos',null,themeBtn())+'<div class="page"><div class="ld"><div class="section">'+bibliotecaList(p.id)+'</div><div class="ld-detail">'+passoDetalhe(p)+'</div></div></div>';
+  }
+  return topbar(p.nome,'passos',themeBtn())+'<div class="page narrow">'+passoDetalhe(p)+'</div>';
+};
+
+/* ---------- Cadastrar / editar passo ---------- */
+function fv(k){return S.ui.form&&S.ui.form[k]!=null?S.ui.form[k]:'';}
+function field(id,label,ctrl,err,help){return '<div class="field'+(err?' err':'')+'"><label for="'+id+'">'+label+'</label>'+ctrl+(err?'<span class="help" role="alert">'+ic('error','sm')+' '+esc(err)+'</span>':help?'<span class="help">'+esc(help)+'</span>':'')+'</div>';}
+V.passoForm=function(r){
+  if(!podeEditar())return topbar('Cadastrar passo','passos')+'<div class="page narrow">'+emptyBox('Disponível para colaboradores e curadores','Mude o perfil de demonstração em Perfil para ver esta tela.','<div><a class="btn tonal" href="#perfil">Ir para Perfil</a></div>')+'</div>';
+  var p=r.id?passo(r.id):null;
+  var k='passo:'+(r.id||'novo');
+  if(!S.ui.form||S.ui.form._k!==k){S.ui.form=p?{_k:k,nome:p.nome,niveis:p.niveis.slice(),cat:p.cat,desc:p.desc,pisadas:p.pisadas||'',vars:p.variacoes.map(function(v){return {t:v.t,liga:v.liga||''};})}:{_k:k,nome:'',niveis:[],cat:'',desc:'',pisadas:'',vars:[]};S.ui.errs={};}
+  var f=S.ui.form,e=S.ui.errs;
+  var dup=f.nome&&PASSOS.find(function(x){return norm(x.nome)===norm(f.nome)&&x.id!==(r.id||'');});
+  var titulo=p?(S.perfil==='curador'?'Editar passo':'Sugerir edição'):'Cadastrar passo';
+  return topbar(titulo,p?'passo-'+p.id:'passos')+'<div class="page narrow">'+
+  (S.offline?'<div class="banner offline">'+ic('cloud_off')+'<div class="small">Cadastrar e editar precisam de internet. Volte a ficar online para salvar.</div></div>':'')+
+  '<div class="banner info">'+ic(S.perfil==='curador'?'verified':'schedule')+'<div class="small">'+(S.perfil==='curador'?'Como curador, o passo é publicado como Oficial ao salvar.':'Como colaborador, o envio fica “Em revisão” até o curador aprovar.')+'</div></div>'+
+  '<form class="form" data-f="passo" data-id="'+(r.id||'')+'" novalidate>'+
+  field('f-nome','Nome do passo *','<input class="input" id="f-nome" data-in="form" data-k="nome" value="'+esc(f.nome)+'">',e.nome)+
+  (dup?'<div class="banner pend">'+ic('content_copy')+'<div class="grow small">Já existe um passo chamado <b>'+esc(dup.nome)+'</b>. Confira antes de criar outro.<br><a href="#passo-'+dup.id+'" style="color:var(--primary)">Abrir '+esc(dup.nome)+'</a></div></div>':'')+
+  '<div class="field'+(e.niveis?' err':'')+'"><span class="lbl">Níveis *</span><div class="chips">'+NIVEIS.map(function(n){return chip('fFormNivel',n.id,n.nome,f.niveis.indexOf(n.id)>=0);}).join('')+'</div>'+(e.niveis?'<span class="help" role="alert">'+esc(e.niveis)+'</span>':'<span class="help">O mesmo passo pode estar em mais de um nível, sem duplicar o cadastro.</span>')+'</div>'+
+  '<div class="field'+(e.cat?' err':'')+'"><span class="lbl">Categoria *</span><div class="seg" role="group" aria-label="Categoria">'+['Fechado','Aberto'].map(function(c){return '<button type="button" data-a="fFormCat" data-v="'+c+'" aria-pressed="'+(f.cat===c)+'">'+(f.cat===c?ic('check'):'')+c+'</button>';}).join('')+'</div>'+(e.cat?'<span class="help" role="alert">'+esc(e.cat)+'</span>':'<span class="help">Novas categorias são criadas pelo curador em Gerir conteúdo.</span>')+'</div>'+
+  field('f-desc','Descrição da execução','<textarea class="textarea" id="f-desc" data-in="form" data-k="desc">'+esc(f.desc)+'</textarea>')+
+  field('f-pis','Quantidade de pisadas','<input class="input" id="f-pis" data-in="form" data-k="pisadas" value="'+esc(f.pisadas)+'" placeholder="Ex.: 3 + 3">',null,'Texto livre. Deixe em branco se não se aplica.')+
+  '<div class="field"><span class="lbl">Variações</span><div class="list">'+f.vars.map(function(v,i){return '<div class="card flat"><div class="field"><label for="v-'+i+'">Variação '+(i+1)+'</label><input class="input" id="v-'+i+'" data-in="var" data-i="'+i+'" value="'+esc(v.t)+'"></div><div class="row"><div class="field grow"><label for="vl-'+i+'">Leva a outro passo (opcional)</label><select class="select" id="vl-'+i+'" data-in="varLiga" data-i="'+i+'"><option value="">Nenhum</option>'+PASSOS.map(function(x){return '<option value="'+x.id+'"'+(v.liga===x.id?' selected':'')+'>'+esc(x.nome)+'</option>';}).join('')+'</select></div><button type="button" class="icon-btn" data-a="rmVar" data-i="'+i+'" aria-label="Remover variação">'+ic('delete')+'</button></div></div>';}).join('')+'</div><div><button type="button" class="btn outlined" data-a="addVar">'+ic('add')+'Adicionar variação</button></div></div>'+
+  '<div class="btn-row"><button class="btn filled lg" type="submit"'+needNet()+'>'+(S.perfil==='curador'?'Salvar passo':'Enviar para revisão')+'</button><button type="button" class="btn text" data-a="voltar" data-v="'+(p?'passo-'+p.id:'passos')+'">Cancelar</button></div>'+
+  '</form></div>';
+};
+
+/* ---------- Exames ---------- */
+V.exames=function(r,selId){
+  var prox=S.nivel?exameSaida(S.nivel):null;
+  var selE=selId?exame(selId):prox;
+  var list=function(sel){return '<div class="list">'+EXAMES.map(function(e,i){var ks=critKeys(e),f=ks.filter(function(k){return S.crit[k];}).length;return '<a class="card link'+(sel===e.id?' sel':'')+'" href="#exame-'+e.id+'"'+(prox&&prox.id===e.id?' style="border-color:var(--primary);border-width:2px"':'')+'><div class="row"><span class="num muted">'+two(i+1)+'</span><span class="grow meta-row">'+selo(e.de)+ic('arrow_forward','sm')+selo(e.para)+'</span>'+(prox&&prox.id===e.id?'<span class="pill">Seu próximo</span>':'')+'</div><span class="small muted">'+e.grupos.map(function(g){return g.nome.replace('Etapa 2 · ','').replace('Etapa 1 · ','');}).join(' · ')+'</span>'+(f?'<span class="small">'+f+' de '+ks.length+' revisados</span>':'')+'</a>';}).join('')+'</div>';};
+  var head='<section class="cover"><div class="cover-text"><p class="eyebrow">Exames de colar</p><h2 class="h1">Sete exames. Critérios do manual, sem atalhos.</h2><p class="muted measure" style="margin:0">Exames registrados na plataforma danca.com. O checklist mostra só o seu estudo, não aprovação.</p></div></section>';
+  var regras='<a class="card link" href="#regras" style="background:var(--tertiary-container);color:var(--on-tertiary-container);border-color:transparent"><div class="row">'+ic('gavel')+'<span class="grow"><span class="h3">Regras gerais do exame</span><br><span class="small">Quem pode prestar, quando acontece, ficha de avaliação e conselho de classe</span></span>'+ic('chevron_right')+'</div></a>';
+  return topbar('Exames',null,themeBtn())+'<div class="page">'+head+(isWide()?'<div class="ld"><div class="section">'+regras+list(selE&&selE.id)+'</div><div class="ld-detail">'+(selE?exameDetalhe(selE):emptyBox('Escolha um exame',null))+'</div></div>':regras+list())+'</div>';
+};
+function exameDetalhe(e){
+  var ks=critKeys(e),f=ks.filter(function(k){return S.crit[k];}).length;
+  var idx=EXAMES.indexOf(e);
+  return '<div class="section view-enter">'+
+  '<div class="meta-row">'+selo(e.de)+ic('arrow_forward')+selo(e.para)+'</div>'+
+  '<h2 class="h1">'+esc(nivel(e.de).nome)+' → '+esc(nivel(e.para).nome)+'</h2>'+
+  '<p class="small muted" style="margin:0">Exame '+two(idx+1)+' de 07 · Fonte: '+FONTE+'. O manual não classifica os itens em requisito ou recomendação, exceto onde indicado.</p>'+
+  (e.nota?'<div class="banner pend">'+ic('report')+'<div class="small">'+esc(e.nota)+'</div></div>':'')+
+  e.avisos.map(function(a){return '<div class="banner info">'+ic('info')+'<div class="small">'+esc(a)+'</div></div>';}).join('')+
+  '<div class="row"><div class="grow"><div class="progress" style="color:var(--primary)"><i style="width:'+(ks.length?f/ks.length*100:0)+'%"></i></div></div><span class="small"><b>'+f+'</b> de '+ks.length+' revisados</span></div>'+
+  e.grupos.map(function(g,gi){return '<section class="crit-group"><h3 class="h3">'+esc(g.nome)+'</h3>'+(g.desc?'<p class="small muted" style="margin:0 0 6px">'+esc(g.desc)+'</p>':'')+g.itens.map(function(it,ii){var key=e.id+':'+gi+':'+ii;return '<div class="crit-item"><span class="n">'+(ii+1)+'</span><div style="display:flex;flex-direction:column;gap:8px"><p>'+esc(it.t)+'</p>'+(it.tipo?'<div class="meta-row"><span class="tag" style="background:var(--tertiary-container);color:var(--on-tertiary-container)">'+it.tipo+'</span><span class="small muted">'+esc(it.obs||'')+'</span></div>':'')+(it.liga?'<div class="chips">'+it.liga.map(function(pid){return '<a class="chip" href="#passo-'+pid+'">'+esc(passo(pid).nome)+ic('chevron_right')+'</a>';}).join('')+'</div><span class="small muted">Passos ligados pelo curador</span>':'')+'<label class="check"><input type="checkbox" data-a="crit" data-v="'+key+'"'+(S.crit[key]?' checked':'')+'><span>Revisei</span></label></div></div>';}).join('')+'</section>';}).join('')+
+  '<p class="small muted" style="margin:0">O checklist mostra só o seu progresso de estudo. Ele não indica aprovação nem aptidão para o exame.</p>'+
+  (S.perfil==='curador'?'<div><a class="btn outlined" href="#gerir-exame-'+e.id+'">'+ic('edit')+'Editar critérios</a></div>':'')+
+  '</div>';
+}
+V.exame=function(r){
+  var e=exame(r.id);if(!e)return notFound();
+  if(isWide())return V.exames(r,e.id);
+  return topbar(nivel(e.de).nome+' → '+nivel(e.para).nome,'exames',themeBtn())+'<div class="page narrow">'+exameDetalhe(e)+'</div>';
+};
+V.regras=function(){
+  function pendBlock(id){var p=PEND.find(function(x){return x.id===id;}),val=pendValor(id);
+    if(val)return '<p style="margin:0">'+esc(val)+'</p><span class="small muted">Confirmado pelo curador</span>';
+    return '<div class="banner pend">'+ic('hourglass_top')+'<div class="grow"><p class="title" style="margin:0">Aguardando confirmação do curador</p><details style="margin-top:6px"><summary class="small" style="cursor:pointer">O manual traz '+p.ops.length+' versões</summary><ol class="small" style="margin:8px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px">'+p.ops.map(function(o){return '<li>'+esc(o)+'</li>';}).join('')+'</ol></details>'+(S.perfil==='curador'?'<a class="btn text" style="padding:0;margin-top:6px" href="#gerir">Resolver em Gerir conteúdo</a>':'')+'</div></div>';}
+  var bloco=function(t,body){return '<section class="crit-group"><h3 class="h3">'+t+'</h3><div style="display:flex;flex-direction:column;gap:10px;padding-top:6px">'+body+'</div></section>';};
+  return topbar('Regras do exame','exames',themeBtn())+'<div class="page narrow">'+
+  '<section class="section"><p class="eyebrow">Fonte: '+FONTE+'</p><h2 class="h1">Como funciona o exame de colar</h2></section>'+
+  bloco('Quem pode prestar','<p style="margin:0">Alunos matriculados (em unidades da escola ou parceiras), com pelo menos 4 presenças no mês anterior ao do exame e que tenham cumprido o tempo mínimo da roda.</p><p class="eyebrow">Tempo mínimo da roda</p>'+pendBlock('tempo')+'<p style="margin:0">O exame é pago e a inscrição precisa ser adquirida pelo aluno sempre no prazo estabelecido pela escola.</p>')+
+  bloco('Frequência e casos específicos','<p class="eyebrow">Gympass e TotalPass</p>'+pendBlock('gympass')+'<p class="eyebrow">Alunos estrangeiros</p>'+pendBlock('estrangeiros'))+
+  bloco('Quando acontece','<dl class="kv"><dt>Belo Horizonte</dt><dd>Exame unificado em todas as unidades, a cada 3 meses.</dd><dt>Preta Av. → Vermelha</dt><dd>A cada 6 meses.</dd><dt>Transparente → Branca</dt><dd>A cada 45 dias, em cada unidade.</dd><dt>Outras cidades</dt><dd>Juiz de Fora, Rio/Niterói, SP, Florianópolis, Londres e São Petersburgo: a cada 3 ou 6 meses.</dd></dl>')+
+  bloco('Segunda chamada',pendBlock('segunda'))+
+  bloco('Cadastro no sistema','<p style="margin:0">Todos os exames são registrados na plataforma danca.com.</p><p class="small muted" style="margin:0">Endereço: danca.com</p>')+
+  bloco('Conselho de classe','<p style="margin:0">Realizado pelas equipes de todas as unidades; os examinadores podem consultar, se necessário. Nele consta:</p><div class="chips"><span class="tag">Evolução do aluno nas aulas</span><span class="tag">Dificuldades e facilidades</span><span class="tag">Presença e dedicação</span></div>')+
+  bloco('Campos da ficha de avaliação','<dl class="kv"><dt><b>Elogio</b></dt><dd>Sobre recurso acima do esperado pelo cobrado na roda.</dd><dt><b>Atenção ao recurso</b></dt><dd>Precisa ser treinado pois, apesar de não eliminatório, apresentou ressalvas.</dd><dt><b>Recurso com ressalvas</b></dt><dd>Ressalvas mais graves e principais responsáveis por uma possível reprovação.</dd><dt><b>Observação</b></dt><dd>Caso precise de um recurso que não está presente na ficha ou para destrinchar algo.</dd></dl><p class="small muted" style="margin:0">A ficha não precisa explicar como melhorar: isso é trabalhado em aula, ou o aluno procura o professor ou examinador depois.</p>')+
+  bloco('Nivelamento','<p class="eyebrow">Ausência que exige nivelamento</p>'+pendBlock('esporadico')+'<p class="eyebrow">Período de teste</p>'+pendBlock('teste'))+
+  '</div>';
+};
+
+/* ---------- Gerir conteúdo (curador) ---------- */
+V.gerir=function(){
+  if(S.perfil!=='curador')return restrito('Gerir conteúdo');
+  var abertas=PEND.filter(function(p){return S.pendRes[p.id]==null;});
+  return topbar('Gerir conteúdo','mais',themeBtn())+'<div class="page">'+
+  '<section class="cover"><div class="cover-text"><p class="eyebrow">Curadoria</p><h2 class="h1">Níveis, critérios e o que falta confirmar.</h2></div></section>'+
+  '<section class="section"><div class="section-head"><h2 class="h2">Divergências do manual · '+abertas.length+'</h2><span class="small muted">Até confirmar, o app mostra “Aguardando confirmação”</span></div>'+
+  (abertas.length?'<div class="list">'+abertas.map(function(p){return '<div class="card"><p class="h3">'+esc(p.titulo)+'</p><fieldset style="border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:6px"><legend class="small muted" style="padding:0 0 4px">Qual versão vale?</legend>'+p.ops.map(function(o,i){return '<label class="check"><input type="radio" name="pend-'+p.id+'" data-a="pendPick" data-id="'+p.id+'" data-v="'+i+'"'+(S.ui['pp-'+p.id]==i?' checked':'')+'><span class="small">'+esc(o)+'</span></label>';}).join('')+'</fieldset><div><button class="btn tonal" data-a="pendOk" data-v="'+p.id+'"'+needNet()+'>Confirmar versão</button></div></div>';}).join('')+'</div>':emptyBox('Tudo confirmado','As regras do exame já mostram os valores escolhidos.'))+'</section>'+
+  '<section class="section"><div class="section-head"><h2 class="h2">Níveis</h2><button class="btn text" data-a="novoNivel"'+needNet()+'>'+ic('add')+'Novo nível</button></div><div class="list">'+NIVEIS.map(function(n,i){var c=passosDoNivel(n.id).length;return '<div class="list-row"><span class="num muted" style="width:28px">'+two(i+1)+'</span>'+selo(n.id)+'<span class="grow small muted">'+(c?c+' passos':'Conteúdo a cadastrar')+'</span><a class="btn text" href="#nivel-'+n.id+'">Abrir</a></div>';}).join('')+'</div></section>'+
+  '<section class="section"><div class="section-head"><h2 class="h2">Critérios dos exames</h2></div><div class="list">'+EXAMES.map(function(e){var v=(S.versoes[e.id]||[]).length+1;return '<a class="list-row" href="#gerir-exame-'+e.id+'"><span class="grow meta-row">'+selo(e.de)+ic('arrow_forward','sm')+selo(e.para)+'</span><span class="small muted">Versão '+v+'</span>'+ic('chevron_right')+'</a>';}).join('')+'</div></section>'+
+  '</div>';
+};
+V.gerirExame=function(r){
+  if(S.perfil!=='curador')return restrito('Editar critérios');
+  var e=exame(r.id);if(!e)return notFound();
+  var hist=[{v:1,quando:'Carga inicial',por:FONTE}].concat((S.versoes[e.id]||[]).map(function(x,i){return {v:i+2,quando:x.quando,por:x.item};})).reverse();
+  return topbar('Editar critérios','gerir')+'<div class="page narrow">'+
+  '<div class="meta-row">'+selo(e.de)+ic('arrow_forward')+selo(e.para)+'</div><h2 class="h1">Critérios do exame</h2>'+
+  e.grupos.map(function(g,gi){return '<section class="crit-group"><h3 class="h3">'+esc(g.nome)+'</h3>'+g.itens.map(function(it,ii){var id='ed-'+gi+'-'+ii;return '<div class="field" style="padding:10px 0"><label for="'+id+'">Item '+(ii+1)+'</label><textarea class="textarea" style="min-height:72px" id="'+id+'">'+esc(it.t)+'</textarea><div><button class="btn text" style="padding:0" data-a="salvarItem" data-id="'+e.id+'" data-g="'+gi+'" data-i="'+ii+'"'+needNet()+'>Salvar item</button></div></div>';}).join('')+'</section>';}).join('')+
+  '<section class="section"><div class="section-head"><h3 class="h3">Histórico de versões</h3></div><div class="list">'+hist.map(function(h){return '<div class="list-row"><span class="num" style="width:36px">v'+h.v+'</span><span class="grow small">'+esc(h.quando)+'<br><span class="muted">'+esc(h.por)+'</span></span></div>';}).join('')+'</div></section></div>';
+};
+function restrito(t){return topbar(t,'mais')+'<div class="page narrow">'+emptyBox('Disponível só para o curador','Mude o perfil de demonstração para Curador em Perfil.','<div><a class="btn tonal" href="#perfil">Ir para Perfil</a></div>')+'</div>';}
+
+/* ---------- Evolução ---------- */
+V.evolucao=function(){
+  var n=S.nivel?nivel(S.nivel):null,pr=n?progresso(n.id):null;
+  return topbar('Meu colar e evolução','mais',themeBtn())+'<div class="page narrow">'+
+  '<div class="banner info">'+ic('verified_user')+'<div class="small">Registro pessoal, sem valor oficial. O registro oficial dos exames fica na plataforma danca.com.</div></div>'+
+  (n?'<section class="nivel-hero th-'+n.cor+'"><span class="big-num" aria-hidden="true">'+two(nIdx(n.id)+1)+'</span><div style="display:flex;flex-direction:column;gap:12px;position:relative"><p class="eyebrow" style="color:inherit;opacity:.8">Nível atual</p>'+selo(n.id)+'<h2 class="h1">'+esc(n.nome)+'</h2><div class="row small"><span class="grow">Checklist do nível</span><b>'+pr.feitos+' de '+pr.total+' revisados</b></div><div class="progress"><i style="width:'+pr.pct+'%"></i></div></div></section>':emptyBox('Nível não informado','Informe seu colar atual para ver o progresso.'))+
+  '<section class="section"><div class="section-head"><h2 class="h2">Mudei de colar</h2></div><form class="form" data-f="mudarNivel" novalidate><div class="form-grid">'+
+  field('ev-nivel','Novo nível','<select class="select" id="ev-nivel">'+NIVEIS.map(function(x){return '<option value="'+x.id+'"'+(x.id===S.nivel?' selected':'')+'>'+x.nome+'</option>';}).join('')+'</select>')+
+  field('ev-data','Data em que cheguei (opcional)','<input class="input" type="date" id="ev-data" max="'+hojeISO()+'">')+'</div><div><button class="btn filled" type="submit">Salvar</button></div></form></section>'+
+  '<section class="section"><div class="section-head"><h2 class="h2">Histórico</h2></div><div class="list">'+S.historico.slice().reverse().map(function(h){var x=nivel(h.nivel);return '<div class="list-row">'+selo(x.id)+'<span class="grow small">'+(h.data?'Desde '+dataCurta(h.data):'<span class="muted">Data não informada</span>')+'</span>'+(h.ex?exTag():'')+'</div>';}).join('')+'</div></section></div>';
+};
+
+/* ---------- Combinações ---------- */
+function comboCard(c){
+  return '<a class="card link" href="#combinacao-'+c.id+'"><div class="meta-row">'+selo(c.nivel)+origem(c.origem)+(c.exemplo?exTag():'')+'</div><p class="h3">'+esc(c.nome)+'</p><p class="small muted" style="margin:0">'+c.passos.length+' passos · '+c.passos.map(function(p){return passo(p).nome;}).join(' → ')+'</p></a>';
+}
+V.combinacoes=function(){
+  var porNivel=NIVEIS.map(function(n){return {n:n,cs:S.combos.filter(function(c){return c.nivel===n.id;})};});
+  return topbar('Combinações','mais',themeBtn())+'<div class="page">'+
+  '<section class="cover"><div class="cover-text"><p class="eyebrow">Combinações por roda</p><h2 class="h1">Sequências ensinadas na roda, com os passos da biblioteca.</h2><div class="banner info">'+ic('info')+'<div class="small">Combinações não são a lista oficial de passos cobrados no exame.</div></div></div></section>'+
+  porNivel.map(function(x){return '<section class="section"><div class="section-head"><h2 class="h2">'+selo(x.n.id)+'</h2><span class="small muted">'+x.cs.length+' combinações</span></div>'+(x.cs.length?'<div class="grid2">'+x.cs.map(comboCard).join('')+'</div>':'<p class="small muted" style="margin:0">Conteúdo a cadastrar</p>')+'</section>';}).join('')+
+  '</div><a class="fab" href="#combinacao-nova">'+ic('add')+'Montar combinação</a>';
+};
+V.combo=function(r){
+  var c=S.combos.find(function(x){return x.id===r.id;});if(!c)return notFound();
+  var mids=S.midias.filter(function(m){return m.combo===c.id;});
+  var mine=c.origem==='pessoal';
+  return topbar('Combinação','combinacoes',themeBtn())+'<div class="page narrow">'+
+  '<div class="meta-row">'+selo(c.nivel)+origem(c.origem)+(c.exemplo?exTag():'')+'</div><h2 class="h1">'+esc(c.nome)+'</h2>'+
+  '<dl class="kv"><dt>Roda</dt><dd>Colar '+esc(nivel(c.nivel).nome)+'</dd><dt>Aula</dt><dd>'+(c.aula?esc(c.aula):'<span class="muted">Não informada</span>')+'</dd><dt>Cadastro</dt><dd>'+dataCurta(c.criado)+'</dd></dl>'+
+  '<div class="banner info">'+ic('info')+'<div class="small">Esta combinação não é requisito de exame.</div></div>'+
+  '<section class="section"><div class="section-head"><h3 class="h3">Sequência · '+c.passos.length+' passos</h3></div><div class="seq">'+c.passos.map(function(pid,i){var p=passo(pid);return (i>0?'<div class="seq-trans">'+(c.trans[i-1]?esc(c.trans[i-1]):'Transição a descrever')+'</div>':'')+'<a class="seq-step" href="#passo-'+pid+'" style="text-decoration:none"><span class="n">'+(i+1)+'</span><span><span class="title">'+esc(p.nome)+'</span><br><span class="small muted">'+p.cat+(p.pisadas?' · '+esc(p.pisadas)+' pisadas':'')+'</span></span>'+ic('chevron_right')+'</a>';}).join('')+'</div></section>'+
+  '<section class="section"><div class="section-head"><h3 class="h3">Fotos e vídeos</h3></div>'+(mids.length?'<div class="grid2">'+mids.map(midiaCard).join('')+'</div>':emptyBox('Nenhum vídeo ainda',null))+'</section>'+
+  '<div class="btn-row">'+(mine?'<a class="btn filled" href="#combinacao-editar-'+c.id+'">'+ic('edit')+'Editar</a>':'<button class="btn tonal" data-a="duplicar" data-v="'+c.id+'">'+ic('content_copy')+'Duplicar para minha área</button>')+'</div>'+
+  '</div>';
+};
+V.comboForm=function(r){
+  var c=r.id?S.combos.find(function(x){return x.id===r.id;}):null;
+  var k='combo:'+(r.id||'nova');
+  if(!S.ui.form||S.ui.form._k!==k){S.ui.form=c?{_k:k,nome:c.nome,nivel:c.nivel,aula:c.aula,passos:c.passos.slice(),trans:c.trans.slice(),picker:false,pq:''}:{_k:k,nome:'',nivel:S.nivel||'branca',aula:'',passos:[],trans:[],picker:false,pq:''};S.ui.errs={};}
+  var f=S.ui.form,e=S.ui.errs;
+  var pick=PASSOS.filter(function(p){return p.origem!=='revisao'&&(!f.pq||norm(p.nome).indexOf(norm(f.pq))>=0);});
+  return topbar(c?'Editar combinação':'Montar combinação',c?'combinacao-'+c.id:'combinacoes')+'<div class="page narrow">'+
+  '<form class="form" data-f="combo" data-id="'+(r.id||'')+'" novalidate>'+
+  field('c-nome','Nome *','<input class="input" id="c-nome" data-in="form" data-k="nome" value="'+esc(f.nome)+'">',e.nome)+
+  '<div class="form-grid">'+field('c-nivel','Roda (colar) *','<select class="select" id="c-nivel" data-in="form" data-k="nivel">'+NIVEIS.map(function(n){return '<option value="'+n.id+'"'+(f.nivel===n.id?' selected':'')+'>'+n.nome+'</option>';}).join('')+'</select>')+
+  field('c-aula','Aula ou data em que foi ensinada','<input class="input" id="c-aula" data-in="form" data-k="aula" value="'+esc(f.aula)+'" placeholder="Opcional">')+'</div>'+
+  '<div class="field'+(e.passos?' err':'')+'"><span class="lbl">Sequência de passos *</span>'+
+  (f.passos.length?'<div class="seq">'+f.passos.map(function(pid,i){var p=passo(pid);return (i>0?'<div class="field" style="margin-left:58px;padding:8px 0"><label for="t-'+i+'">Transição '+i+' → '+(i+1)+'</label><input class="input" id="t-'+i+'" data-in="trans" data-i="'+(i-1)+'" value="'+esc(f.trans[i-1]||'')+'" placeholder="Opcional"></div>':'')+'<div class="seq-step"><span class="n">'+(i+1)+'</span><span class="title">'+esc(p.nome)+'</span><span class="btn-row" style="gap:0"><button type="button" class="icon-btn" data-a="mv" data-i="'+i+'" data-v="-1" aria-label="Subir '+esc(p.nome)+'"'+(i===0?' disabled':'')+'>'+ic('arrow_upward')+'</button><button type="button" class="icon-btn" data-a="mv" data-i="'+i+'" data-v="1" aria-label="Descer '+esc(p.nome)+'"'+(i===f.passos.length-1?' disabled':'')+'>'+ic('arrow_downward')+'</button><button type="button" class="icon-btn" data-a="rmPasso" data-i="'+i+'" aria-label="Remover '+esc(p.nome)+'">'+ic('close')+'</button></span></div>';}).join('')+'</div>':'<p class="small muted" style="margin:0">Nenhum passo ainda. Adicione ao menos 2.</p>')+
+  (e.passos?'<span class="help" role="alert">'+esc(e.passos)+'</span>':'')+
+  '<div><button type="button" class="btn outlined" data-a="picker">'+ic('add')+'Adicionar passo</button></div>'+
+  (f.picker?'<div class="card" style="max-height:360px;overflow:auto"><div class="search" style="min-height:48px">'+ic('search')+'<label class="sr" for="pq">Buscar passo</label><input id="pq" data-in="form" data-k="pq" placeholder="Buscar passo" value="'+esc(f.pq)+'"></div>'+(pick.length?pick.map(function(p){return '<button type="button" class="list-row" data-a="addPasso" data-v="'+p.id+'" style="background:none;border-left:0;border-right:0;border-bottom:0;cursor:pointer;text-align:left;width:100%">'+selo(p.niveis[0])+'<span class="grow">'+esc(p.nome)+'</span>'+ic('add')+'</button>';}).join(''):emptyBox('Esse passo não existe ainda',podeEditar()?'Cadastre o passo antes de usá-lo na combinação.':'Peça a um colaborador para cadastrar, ou sugira o passo.','<div><a class="btn tonal" href="#passo-novo">Cadastrar passo</a></div>'))+'</div>':'')+
+  '</div>'+
+  '<div class="btn-row"><button class="btn filled lg" type="submit">Salvar combinação</button><button type="button" class="btn text" data-a="voltar" data-v="combinacoes">Cancelar</button></div>'+
+  '</form></div>';
+};
+
+/* ---------- Mídias ---------- */
+function midiaCard(m){
+  return '<a class="card link" href="#midia-'+m.id+'" style="padding:0;overflow:hidden;gap:0"><figure class="foto r169" style="border:0;border-radius:0">'+ic(m.tipo==='Vídeo'?'play_circle':'photo_camera','cam')+'<figcaption>'+esc(m.cap)+'</figcaption></figure><div style="padding:14px 16px;display:flex;flex-direction:column;gap:8px"><div class="meta-row"><span class="tag">'+m.tipo+'</span>'+origem(m.origem)+(m.exemplo?exTag():'')+(S.offline&&m.tipo==='Vídeo'&&!m.baixado?'<span class="small muted">'+ic('cloud_off','sm')+'</span>':'')+'</div><p class="title">'+esc(m.titulo)+'</p></div></a>';
+}
+V.midias=function(){
+  ensureLoaded('midias');
+  var f=S.ui.mFiltro;
+  var res=S.midias.filter(function(m){return (S.perfil!=='aluno'||m.origem!=='revisao')&&(!f.nivel||m.nivel===f.nivel)&&(!f.tipo||m.tipo===f.tipo);});
+  var body=S.falha?erroBox('midias'):!S.ui.loaded.midias?'<div class="grid3" aria-busy="true">'+[1,2,3].map(function(){return '<div class="sk" style="height:240px"></div>';}).join('')+'</div>':
+    (res.length?'<div class="grid3">'+res.map(midiaCard).join('')+'</div>':emptyBox('Nenhuma mídia com esses filtros','Remova um filtro para ver mais.'));
+  return topbar('Fotos e vídeos','mais',themeBtn())+'<div class="page">'+
+  '<section class="cover"><div class="cover-text"><p class="eyebrow">Acervo visual</p><h2 class="h1">Estudar pela imagem.</h2><p class="muted measure" style="margin:0">Cada mídia fica ligada a um passo, nível ou combinação, sem cópias.</p></div></section>'+
+  '<div class="chips">'+NIVEIS.slice(0,2).map(function(n){return chip('mfNivel',n.id,n.nome,f.nivel===n.id);}).join('')+['Vídeo','Foto'].map(function(t){return chip('mfTipo',t,t,f.tipo===t);}).join('')+'</div>'+body+
+  '</div>'+(podeEditar()?'<a class="fab" href="#enviar-midia"'+(S.offline?' aria-disabled="true" data-a="offlineBlock"':'')+'>'+ic('upload')+'Enviar</a>':'');
+};
+V.midia=function(r){
+  var m=S.midias.find(function(x){return x.id===r.id;});if(!m)return notFound();
+  var ui=S.ui,bloq=S.offline&&!m.baixado&&m.tipo==='Vídeo';
+  var links=[];if(m.passo)links.push('<a class="chip" href="#passo-'+m.passo+'">Passo · '+esc(passo(m.passo).nome)+'</a>');if(m.nivel)links.push('<a class="chip" href="#nivel-'+m.nivel+'">Nível · '+esc(nivel(m.nivel).nome)+'</a>');if(m.combo){var c=S.combos.find(function(x){return x.id===m.combo;});if(c)links.push('<a class="chip" href="#combinacao-'+c.id+'">Combinação · '+esc(c.nome)+'</a>');}
+  return topbar(m.titulo,'midias',themeBtn())+'<div class="page narrow">'+
+  (m.tipo==='Vídeo'?'<div class="player"><div class="tela">'+(bloq?'<div style="text-align:center;display:flex;flex-direction:column;gap:8px;align-items:center;padding:16px">'+ic('cloud_off')+'<span>Este vídeo não foi baixado e não está disponível sem internet.</span></div>':'<button class="icon-btn" data-a="play" aria-label="'+(ui.playing?'Pausar':'Reproduzir')+'" style="width:72px;height:72px;background:rgba(255,255,255,.12)">'+ic(ui.playing?'pause':'play_arrow')+'</button>')+'<span class="cap">'+esc(m.cap)+'</span></div>'+
+  '<div class="ctrls"><div class="bar"><i style="width:'+(ui.playing?38:12)+'%"></i></div><button class="icon-btn" data-a="play" aria-label="'+(ui.playing?'Pausar':'Reproduzir')+'"'+(bloq?' disabled':'')+'>'+ic(ui.playing?'pause':'play_arrow')+'</button><span class="small" style="font-variant-numeric:tabular-nums">0:0'+(ui.playing?'7':'2')+' / 0:18</span><span class="grow"></span>'+['0.5x','0.75x','1x'].map(function(s){return chip('speed',s,s,ui.speed===s);}).join('')+'<button class="chip" data-a="loop" aria-pressed="'+ui.loop+'">'+ic('repeat')+'Repetir</button></div></div>':foto(m.cap,'r32'))+
+  '<div class="meta-row"><span class="tag">'+m.tipo+'</span>'+origem(m.origem)+(m.exemplo?exTag():'')+'</div><h2 class="h1">'+esc(m.titulo)+'</h2><p class="body-l" style="margin:0">'+esc(m.desc)+'</p>'+
+  '<section class="section"><div class="section-head"><h3 class="h3">Ligada a</h3></div><div class="chips">'+links.join('')+'</div></section>'+
+  (m.tipo==='Vídeo'?'<div class="toggle"><span><span class="title">Disponível offline</span><br><span class="small muted">Baixa o vídeo neste aparelho</span></span><button class="switch" role="switch" aria-checked="'+!!m.baixado+'" aria-label="Disponível offline" data-a="baixar" data-v="'+m.id+'"'+needNet()+'></button></div>':'')+
+  '</div>';
+};
+V['enviar-midia']=function(){
+  if(!podeEditar())return restrito('Enviar foto ou vídeo');
+  var k='midia';
+  if(!S.ui.form||S.ui.form._k!==k){S.ui.form={_k:k,arquivo:'',titulo:'',desc:'',passo:S.ui.midiaPara||'',nivel:'',combo:'',consent:false};S.ui.errs={};}
+  var f=S.ui.form,e=S.ui.errs,exist=f.passo?S.midias.filter(function(m){return m.passo===f.passo;}):[];
+  return topbar('Enviar foto ou vídeo','midias')+'<div class="page narrow">'+
+  (S.offline?'<div class="banner offline">'+ic('cloud_off')+'<div class="small">Enviar precisa de internet.</div></div>':'')+
+  '<form class="form" data-f="midia" novalidate>'+
+  '<div class="field'+(e.arquivo?' err':'')+'"><label for="m-arq">Arquivo *</label><input class="input" type="file" id="m-arq" accept="image/*,video/*" data-in="arquivo"><span class="help">'+(e.arquivo?esc(e.arquivo):f.arquivo?'Selecionado: '+esc(f.arquivo):'Limite de tamanho e duração a definir pelo curador.')+'</span></div>'+
+  field('m-tit','Título *','<input class="input" id="m-tit" data-in="form" data-k="titulo" value="'+esc(f.titulo)+'">',e.titulo)+
+  field('m-desc','Descrição','<textarea class="textarea" id="m-desc" data-in="form" data-k="desc">'+esc(f.desc)+'</textarea>')+
+  '<div class="field'+(e.vinc?' err':'')+'"><span class="lbl">Ligar a (ao menos um) *</span><div class="form-grid">'+
+  '<div class="field"><label for="m-passo">Passo</label><select class="select" id="m-passo" data-in="form" data-k="passo"><option value="">Nenhum</option>'+PASSOS.map(function(p){return '<option value="'+p.id+'"'+(f.passo===p.id?' selected':'')+'>'+esc(p.nome)+'</option>';}).join('')+'</select></div>'+
+  '<div class="field"><label for="m-nivel">Nível</label><select class="select" id="m-nivel" data-in="form" data-k="nivel"><option value="">Nenhum</option>'+NIVEIS.map(function(n){return '<option value="'+n.id+'"'+(f.nivel===n.id?' selected':'')+'>'+n.nome+'</option>';}).join('')+'</select></div>'+
+  '<div class="field"><label for="m-combo">Combinação</label><select class="select" id="m-combo" data-in="form" data-k="combo"><option value="">Nenhuma</option>'+S.combos.map(function(c){return '<option value="'+c.id+'"'+(f.combo===c.id?' selected':'')+'>'+esc(c.nome)+'</option>';}).join('')+'</select></div></div>'+
+  (e.vinc?'<span class="help" role="alert">'+esc(e.vinc)+'</span>':'')+'</div>'+
+  (exist.length?'<div class="banner pend">'+ic('video_library')+'<div class="grow small">Este passo já tem '+exist.length+(exist.length>1?' mídias':' mídia')+'. Confira antes de enviar outra:<ul style="margin:6px 0 0;padding-left:18px">'+exist.map(function(m){return '<li><a href="#midia-'+m.id+'" style="color:var(--primary)">'+esc(m.titulo)+'</a></li>';}).join('')+'</ul></div></div>':'')+
+  '<label class="check'+(e.consent?' err':'')+'"><input type="checkbox" data-in="consent"'+(f.consent?' checked':'')+'><span>Confirmo que as pessoas que aparecem concordam com a publicação. <span class="small muted">O manual pede para avisar quem não quer ser filmado.</span></span></label>'+(e.consent?'<span class="help" style="color:var(--error)" role="alert">'+esc(e.consent)+'</span>':'')+
+  '<div class="btn-row"><button class="btn filled lg" type="submit"'+needNet()+'>'+(S.perfil==='curador'?'Publicar':'Enviar para revisão')+'</button><button type="button" class="btn text" data-a="voltar" data-v="midias">Cancelar</button></div>'+
+  '</form></div>';
+};
+
+/* ---------- Revisão ---------- */
+function filaList(sel){
+  var pend=S.fila.filter(function(f){return f.estado==='pendente';}),feitos=S.fila.filter(function(f){return f.estado!=='pendente';});
+  return '<div class="section"><div class="section-head"><h2 class="h2">Pendentes · '+pend.length+'</h2></div>'+(pend.length?'<div class="list">'+pend.map(function(f){return '<a class="card link'+(sel===f.id?' sel':'')+'" href="#revisao-'+f.id+'"><div class="meta-row"><span class="tag">'+f.tipo+'</span>'+(f.exemplo?exTag():'')+'</div><p class="title">'+esc(f.titulo)+'</p><span class="small muted">'+esc(f.autor)+' · '+dataCurta(f.data)+'</span></a>';}).join('')+'</div>':emptyBox('Fila vazia','Nada aguardando revisão.'))+
+  (feitos.length?'<div class="section-head"><h3 class="h3">Revisados</h3></div><div class="list">'+feitos.map(function(f){return '<div class="list-row"><span class="tag">'+f.tipo+'</span><span class="grow small">'+esc(f.titulo)+'</span><span class="small muted">'+({aprovado:'Aprovado',ajuste:'Ajuste pedido',recusado:'Recusado'}[f.estado])+'</span></div>';}).join('')+'</div>':'')+'</div>';
+}
+function revisaoDetalhe(f){
+  if(!f)return emptyBox('Escolha um envio',null);
+  var p=f.ref?passo(f.ref):null;
+  return '<div class="section view-enter"><div class="meta-row"><span class="tag">'+f.tipo+'</span>'+(f.exemplo?exTag():'')+'</div><h2 class="h1">'+esc(f.titulo)+'</h2><dl class="kv"><dt>Enviado por</dt><dd>'+esc(f.autor)+'</dd><dt>Data</dt><dd>'+dataCurta(f.data)+'</dd>'+(p?'<dt>Passo</dt><dd><a href="#passo-'+p.id+'" style="color:var(--primary)">'+esc(p.nome)+'</a></dd>':'')+'</dl>'+
+  (f.tipo==='Mídia'?foto('Vídeo enviado: execução do passo, câmera fixa','r169'):'')+
+  (f.passos?'<div class="seq">'+f.passos.map(function(pid,i){return '<div class="seq-step"><span class="n">'+(i+1)+'</span><span class="title">'+esc(passo(pid).nome)+'</span><span></span></div>';}).join('')+'</div>':'')+
+  (f.estado==='pendente'?'<div class="field"><label for="rev-com">Comentário para o autor</label><textarea class="textarea" id="rev-com" placeholder="Obrigatório para pedir ajuste"></textarea></div><div class="btn-row"><button class="btn filled" data-a="rev" data-id="'+f.id+'" data-v="aprovado"'+needNet()+'>'+ic('check')+'Aprovar</button><button class="btn tonal" data-a="rev" data-id="'+f.id+'" data-v="ajuste"'+needNet()+'>Pedir ajuste</button><button class="btn text" data-a="rev" data-id="'+f.id+'" data-v="recusado"'+needNet()+' style="color:var(--error)">Recusar</button></div><p class="small muted" style="margin:0">Aprovado vira Comunidade. Você pode promover a Oficial depois.</p>':'<div class="banner info">'+ic('task_alt')+'<div class="small">Revisado: '+({aprovado:'aprovado',ajuste:'ajuste pedido',recusado:'recusado'}[f.estado])+'. O autor foi avisado.</div></div>')+'</div>';
+}
+V.revisao=function(){
+  if(S.perfil!=='curador')return restrito('Revisão');
+  var first=S.fila.find(function(f){return f.estado==='pendente';});
+  return topbar('Revisão','mais',themeBtn())+'<div class="page"><section class="cover"><div class="cover-text"><p class="eyebrow">Curadoria</p><h2 class="h1">O que a comunidade enviou.</h2></div></section>'+(isWide()?'<div class="ld">'+filaList(first&&first.id)+'<div class="ld-detail">'+revisaoDetalhe(first)+'</div></div>':filaList())+'</div>';
+};
+V.revisaoItem=function(r){
+  if(S.perfil!=='curador')return restrito('Revisão');
+  var f=S.fila.find(function(x){return x.id===r.id;});if(!f)return notFound();
+  if(isWide())return topbar('Revisão','mais',themeBtn())+'<div class="page"><div class="ld">'+filaList(f.id)+'<div class="ld-detail">'+revisaoDetalhe(f)+'</div></div></div>';
+  return topbar('Revisar envio','revisao')+'<div class="page narrow">'+revisaoDetalhe(f)+'</div>';
+};
+
+/* ---------- Agenda ---------- */
+function eventoCard(e){var d=pd(e.data);return '<a class="card link" href="#evento-'+e.id+'" style="flex-direction:row;align-items:center;gap:16px"><span class="date-block"><b>'+two(d.getDate())+'</b><span>'+MES3[d.getMonth()]+'</span></span><span class="grow" style="display:flex;flex-direction:column;gap:4px;min-width:0"><span class="meta-row"><span class="tag">'+e.tipo+'</span>'+(e.exemplo?exTag():'')+'</span><span class="title">'+esc(e.nome)+'</span><span class="small muted">'+DOW[d.getDay()]+' · '+esc(e.hora)+' · '+esc(e.local)+'</span></span></a>';}
+function calendario(){
+  var base=S.ui.calMes?pd(S.ui.calMes):addDays(0);base=new Date(base.getFullYear(),base.getMonth(),1);
+  var start=new Date(base);start.setDate(1-base.getDay());
+  var cells='';for(var i=0;i<42;i++){var d=new Date(start);d.setDate(start.getDate()+i);var k=iso(d),has=S.eventos.some(function(e){return e.data===k&&(!S.ui.agTipo||e.tipo===S.ui.agTipo);});
+    cells+='<button data-a="calDia" data-v="'+k+'" class="'+(d.getMonth()!==base.getMonth()?'out ':'')+(k===hojeISO()?'hoje':'')+'" aria-pressed="'+(S.ui.calDia===k)+'" aria-label="'+d.getDate()+' de '+MESES[d.getMonth()]+(has?', com evento':'')+'">'+d.getDate()+(has?'<i></i>':'<i style="background:none"></i>')+'</button>';}
+  var dia=S.ui.calDia,doDia=dia?S.eventos.filter(function(e){return e.data===dia&&(!S.ui.agTipo||e.tipo===S.ui.agTipo);}):[];
+  return '<div class="card"><div class="row"><button class="icon-btn" data-a="calMes" data-v="-1" aria-label="Mês anterior">'+ic('chevron_left')+'</button><span class="grow h3" style="text-align:center;text-transform:capitalize">'+MESES[base.getMonth()]+' '+base.getFullYear()+'</span><button class="icon-btn" data-a="calMes" data-v="1" aria-label="Próximo mês">'+ic('chevron_right')+'</button></div><div class="cal">'+DOW.map(function(d){return '<span class="dow">'+d+'</span>';}).join('')+cells+'</div></div>'+
+  (dia?'<div class="section"><h3 class="h3">'+dataLonga(dia)+'</h3>'+(doDia.length?'<div class="list">'+doDia.map(eventoCard).join('')+'</div>':'<p class="small muted" style="margin:0">Nenhum evento neste dia.</p>')+'</div>':'<p class="small muted" style="margin:0">Escolha um dia para ver os eventos.</p>');
+}
+V.agenda=function(){
+  ensureLoaded('agenda');
+  var t=S.ui.agTipo,hoje=hojeISO();
+  var fut=S.eventos.filter(function(e){return e.data>=hoje&&(!t||e.tipo===t);}).sort(function(a,b){return a.data<b.data?-1:a.data>b.data?1:a.hora<b.hora?-1:1;});
+  var lista=fut.length?'<div class="list">'+fut.map(eventoCard).join('')+'</div>':emptyBox('Nenhum evento '+(t?'do tipo '+t.toLowerCase()+' ':'')+'por enquanto','Os eventos de Belo Horizonte aparecem aqui.');
+  var body=S.falha?erroBox('agenda'):!S.ui.loaded.agenda?skeletonList():
+    (isWide()?'<div class="ld"><div class="section">'+calendario()+'</div><div class="section"><h2 class="h2">Próximos</h2>'+lista+'</div></div>':
+    '<div class="seg" role="group" aria-label="Visualização" style="max-width:320px">'+[['lista','Lista','view_list'],['calendario','Calendário','calendar_month']].map(function(o){return '<button data-a="agView" data-v="'+o[0]+'" aria-pressed="'+(S.ui.agenda===o[0])+'">'+ic(o[2])+o[1]+'</button>';}).join('')+'</div>'+(S.ui.agenda==='lista'?lista:calendario()));
+  return topbar('Agenda','mais',themeBtn())+'<div class="page">'+
+  '<section class="cover"><div class="cover-text"><p class="eyebrow">Belo Horizonte</p><h2 class="h1">Onde dançar nas próximas semanas.</h2><p class="small muted" style="margin:0">Eventos marcados como Exemplo são de demonstração. Eventos passados saem da lista.</p></div></section>'+
+  '<div class="chips">'+chip('agTipo','','Todos',!t)+TIPOS_EVENTO.map(function(x){return chip('agTipo',x,x,t===x);}).join('')+'</div>'+body+
+  '</div>'+(podeEditar()?'<a class="fab" href="#evento-novo"'+(S.offline?' aria-disabled="true" data-a="offlineBlock"':'')+'>'+ic('add')+'Cadastrar evento</a>':'');
+};
+V.evento=function(r){
+  var e=S.eventos.find(function(x){return x.id===r.id;});if(!e)return notFound();
+  return topbar(e.nome,'agenda',themeBtn())+'<div class="page narrow">'+foto('Imagem de divulgação do evento','r169')+
+  '<div class="meta-row"><span class="tag">'+e.tipo+'</span>'+(e.exemplo?exTag():'')+(e.pendente?origem('revisao'):'')+'</div><h2 class="h1">'+esc(e.nome)+'</h2>'+
+  '<dl class="kv"><dt>Data</dt><dd style="text-transform:capitalize">'+dataLonga(e.data)+'</dd><dt>Horário</dt><dd>'+esc(e.hora)+'</dd><dt>Local</dt><dd>'+esc(e.local)+'</dd><dt>Cidade</dt><dd>'+esc(e.cidade)+'</dd></dl>'+
+  '<p class="body-l" style="margin:0">'+esc(e.desc)+'</p>'+(e.obs?'<p class="small muted">'+esc(e.obs)+'</p>':'')+
+  (e.link?'<div class="btn-row"><a class="btn filled" href="'+esc(e.link)+'" target="_blank" rel="noopener">Informações e ingressos'+ic('open_in_new')+'</a></div><p class="small muted" style="margin:0">Abre fora do app.</p>':'<p class="small muted" style="margin:0">Sem link de informações.</p>')+
+  (S.perfil==='curador'?'<div class="btn-row"><button class="btn text" data-a="excluirEvento" data-v="'+e.id+'" style="color:var(--error)"'+needNet()+'>'+ic('delete')+'Excluir evento</button></div>':'')+
+  '</div>';
+};
+V.eventoForm=function(){
+  if(!podeEditar())return restrito('Cadastrar evento');
+  var k='evento';
+  if(!S.ui.form||S.ui.form._k!==k){S.ui.form={_k:k,nome:'',data:'',hora:'',local:'',cidade:'Belo Horizonte',tipo:'',desc:'',link:'',obs:''};S.ui.errs={};}
+  var f=S.ui.form,e=S.ui.errs;
+  return topbar('Cadastrar evento','agenda')+'<div class="page narrow">'+
+  (S.offline?'<div class="banner offline">'+ic('cloud_off')+'<div class="small">Cadastrar precisa de internet.</div></div>':'')+
+  '<form class="form" data-f="evento" novalidate>'+
+  field('ev-nome','Nome *','<input class="input" id="ev-nome" data-in="form" data-k="nome" value="'+esc(f.nome)+'">',e.nome)+
+  '<div class="form-grid">'+field('ev-data2','Data *','<input class="input" type="date" id="ev-data2" data-in="form" data-k="data" value="'+esc(f.data)+'">',e.data)+field('ev-hora','Horário *','<input class="input" type="time" id="ev-hora" data-in="form" data-k="hora" value="'+esc(f.hora)+'">',e.hora)+'</div>'+
+  '<div class="form-grid">'+field('ev-local','Local *','<input class="input" id="ev-local" data-in="form" data-k="local" value="'+esc(f.local)+'">',e.local)+field('ev-cidade','Cidade','<input class="input" id="ev-cidade" value="Belo Horizonte" disabled>',null,'Só Belo Horizonte por enquanto.')+'</div>'+
+  '<div class="field'+(e.tipo?' err':'')+'"><span class="lbl">Tipo *</span><div class="chips">'+TIPOS_EVENTO.map(function(x){return chip('evTipo',x,x,f.tipo===x);}).join('')+'</div>'+(e.tipo?'<span class="help" role="alert">'+esc(e.tipo)+'</span>':'')+'</div>'+
+  field('ev-desc','Descrição','<textarea class="textarea" id="ev-desc" data-in="form" data-k="desc">'+esc(f.desc)+'</textarea>')+
+  field('ev-link','Link de informações ou ingressos','<input class="input" type="url" id="ev-link" data-in="form" data-k="link" value="'+esc(f.link)+'" placeholder="https://">')+
+  '<div class="btn-row"><button class="btn filled lg" type="submit"'+needNet()+'>'+(S.perfil==='curador'?'Publicar evento':'Enviar para revisão')+'</button><button type="button" class="btn text" data-a="voltar" data-v="agenda">Cancelar</button></div></form></div>';
+};
+
+/* ---------- Mais e Perfil ---------- */
+V.mais=function(){
+  var it=EXTRA.concat(S.perfil==='curador'?CUR:[]);
+  return topbar('Mais',null,themeBtn())+'<div class="page narrow"><div class="list" style="gap:0">'+it.map(function(n){return '<a class="list-row" href="#'+n.id+'">'+ic(n.icon,'lead')+'<span class="grow title">'+n.label+'</span>'+(n.id==='revisao'?'<span class="pill">'+S.fila.filter(function(f){return f.estado==='pendente';}).length+'</span>':'')+ic('chevron_right')+'</a>';}).join('')+'</div>'+
+  '<div class="toggle"><span><span class="title">Modo offline</span><br><span class="small muted">Simula estar sem internet</span></span><button class="switch" role="switch" aria-checked="'+S.offline+'" aria-label="Modo offline" data-a="offline"></button></div></div>';
+};
+V.perfil=function(){
+  return topbar('Perfil e configurações','mais')+'<div class="page narrow">'+
+  '<section class="section"><div class="row"><span class="brand-mark" style="width:64px;height:64px;border-radius:50%;font-size:22px">A</span><div class="grow"><p class="h3">Aluno de demonstração</p><p class="small muted" style="margin:0">'+(S.nivel?'Colar '+nivel(S.nivel).nome:'Colar não informado')+'</p></div></div></section>'+
+  '<section class="section"><div class="section-head"><h2 class="h3">Ver o protótipo como</h2></div>'+perfilSeg()+'<p class="small muted" style="margin:0">'+({aluno:'Aluno lê tudo e cria só conteúdo pessoal: anotações, checklist e combinações.',colaborador:'Colaborador também envia passos, mídias, combinações e eventos para revisão.',curador:'Curador publica conteúdo oficial, revisa envios e gere níveis e critérios.'}[S.perfil])+'</p></section>'+
+  '<section class="section"><div class="section-head"><h2 class="h3">Aparência</h2></div><div class="seg" role="group" aria-label="Tema" style="max-width:420px">'+[['','Sistema'],['light','Claro'],['dark','Escuro']].map(function(o){var cur=document.documentElement.getAttribute('data-theme')||'';return '<button data-a="setTema" data-v="'+o[0]+'" aria-pressed="'+(cur===o[0])+'">'+o[1]+'</button>';}).join('')+'</div></section>'+
+  '<section class="section"><div class="section-head"><h2 class="h3">Conexão e dados</h2></div>'+
+  '<div class="toggle"><span><span class="title">Modo offline</span><br><span class="small muted">Mostra o conteúdo já baixado, sem atualizações</span></span><button class="switch" role="switch" aria-checked="'+S.offline+'" aria-label="Modo offline" data-a="offline"></button></div>'+
+  '<div class="toggle"><span><span class="title">Simular falha de conexão</span><br><span class="small muted">Para ver os estados de erro</span></span><button class="switch" role="switch" aria-checked="'+S.falha+'" aria-label="Simular falha de conexão" data-a="falha"></button></div>'+
+  '<div class="toggle"><span><span class="title">Última atualização</span><br><span class="small muted">'+dataCurta(hojeISO())+', 07:10</span></span><button class="btn text" data-a="sync"'+needNet()+'>Atualizar</button></div></section>'+
+  '<section class="section"><div class="section-head"><h2 class="h3">Telas de acesso</h2></div><div class="btn-row"><a class="btn outlined" href="#escolher-nivel">Escolher nível atual</a><button class="btn text" data-a="sair">Sair e ver a entrada</button></div></section>'+
+  '<p class="small muted" style="margin:0">Protótipo com dados simulados. Nada é salvo ao recarregar.</p></div>';
+};
+function notFound(){return topbar('Não encontrado','inicio')+'<div class="page narrow">'+emptyBox('Não encontramos esta página','Volte ao início para continuar.','<div><a class="btn tonal" href="#inicio">Ir para o início</a></div>')+'</div>';}
+
+/* ================= render ================= */
+var AUTH=['entrada','criar-conta','escolher-nivel'];
+var lastView='';
+function render(scrollTop){
+  var r=route();
+  if(!S.logado&&AUTH.indexOf(r.v)<0){location.hash='entrada';return;}
+  var act=document.activeElement,aid=act&&act.id,ss=act&&act.selectionStart,se=act&&act.selectionEnd,y=window.scrollY;
+  var fn=V[r.v]||notFound;
+  var html;
+  if(AUTH.indexOf(r.v)>=0){html=fn(r);}
+  else{var cur=sectionOf(r);html=navHtml(cur)+'<main id="main">'+offlineStrip()+fn(r)+'</main>';}
+  html+=dialogHtml()+snackHtml();
+  $app.innerHTML=html;
+  var key=r.v+(r.id||'');
+  if(scrollTop||key!==lastView){window.scrollTo(0,0);}else{window.scrollTo(0,y);}
+  lastView=key;
+  if(aid){var el=document.getElementById(aid);if(el){el.focus({preventScroll:true});try{if(ss!=null)el.setSelectionRange(ss,se);}catch(e){}}}
+  document.title=(document.querySelector('.topbar .t')?document.querySelector('.topbar .t').textContent+' · ':'')+'Guia do Forró';
+}
+function dialogHtml(){var d=S.ui.dialog;if(!d)return '';return '<div class="scrim" data-a="closeDialog" data-self="1"><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dlg-t">'+(d.icon?ic(d.icon,'top'):'')+'<h2 class="h2" id="dlg-t" style="text-align:'+(d.icon?'center':'left')+'">'+esc(d.title)+'</h2><div>'+d.body+'</div><div class="acts">'+d.actions.map(function(a){return '<button class="btn '+(a.kind||'text')+'" data-a="'+a.a+'"'+(a.v?' data-v="'+a.v+'"':'')+'>'+esc(a.label)+'</button>';}).join('')+'</div></div></div>';}
+function snackHtml(){var s=S.ui.snack;if(!s)return '';return '<div class="snack" role="status"><span class="grow">'+esc(s.t)+'</span>'+(s.a?'<button class="btn text" data-a="'+s.a+'">'+esc(s.label)+'</button>':'')+'</div>';}
+var snackT;
+function snack(t,a,label){S.ui.snack={t:t,a:a,label:label};clearTimeout(snackT);snackT=setTimeout(function(){S.ui.snack=null;render(false);},4200);}
+
+/* ================= ações ================= */
+function toggleIn(arr,v){var i=arr.indexOf(v);if(i>=0)arr.splice(i,1);else arr.push(v);}
+var A={
+  tema:function(){var t=temaAtual()==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',t);},
+  setTema:function(d){if(d.v)document.documentElement.setAttribute('data-theme',d.v);else document.documentElement.removeAttribute('data-theme');},
+  perfil:function(d){S.perfil=d.v;S.ui.form=null;snack('Vendo como '+{aluno:'Aluno',colaborador:'Colaborador',curador:'Curador'}[d.v]+'.');},
+  voltar:function(d){if(history.length>1&&S.ui.cameFrom){history.back();}else{go(d.v||'inicio');}},
+  offline:function(){S.offline=!S.offline;snack(S.offline?'Modo offline ligado. Você vê o conteúdo baixado.':'De volta online.');},
+  falha:function(){S.falha=!S.falha;},
+  retry:function(d){S.falha=false;S.ui.loaded[d.v]=false;},
+  sync:function(){snack('Conteúdo atualizado.');},
+  offlineBlock:function(d,ev){ev.preventDefault();snack('Precisa de internet. Desligue o modo offline para continuar.');},
+  sair:function(){S.logado=false;S.ui.form=null;S.ui.errs={};location.hash='entrada';},
+  pick:function(d){S.ui.pick=d.v;},
+  concluirCadastro:function(){S.nivel=S.ui.pick||S.nivel;S.logado=true;S.ui.pick=null;location.hash='inicio';snack('Conta criada. Bons estudos!');},
+  pularNivel:function(){S.nivel=null;S.logado=true;location.hash='inicio';},
+  setNivel:function(d){S.nivel=d.v;S.historico.push({nivel:d.v,data:''});snack('Seu nível agora é '+nivel(d.v).nome+'.');},
+  status:function(d){var old=S.status[d.id]||'nao';S.status[d.id]=d.v;snack(d.v==='revisado'?passo(d.id).nome+' marcado como revisado.':'Status atualizado.','desfazerStatus','Desfazer');S.ui.undo={id:d.id,v:old};},
+  desfazerStatus:function(){if(S.ui.undo){S.status[S.ui.undo.id]=S.ui.undo.v;S.ui.snack=null;}},
+  crit:function(d,ev){S.crit[d.v]=ev.target.checked;},
+  fNivel:function(d){toggleIn(S.ui.fNivel,d.v);},fCat:function(d){toggleIn(S.ui.fCat,d.v);},fOrigem:function(d){toggleIn(S.ui.fOrigem,d.v);},
+  limparFiltros:function(){S.ui.fNivel=[];S.ui.fCat=[];S.ui.fOrigem=[];S.ui.q='';},
+  limparBusca:function(){S.ui.q='';},
+  excluirPasso:function(d){
+    var p=passo(d.v),cs=combosComPasso(p.id);
+    if(cs.length){S.ui.dialog={icon:'block',title:'Não dá para excluir '+p.nome,body:'<p style="margin:0 0 12px">Este passo está em '+cs.length+(cs.length>1?' combinações':' combinação')+'. Remova-o delas antes de excluir.</p><ul style="margin:0;padding-left:20px">'+cs.map(function(c){return '<li><a href="#combinacao-'+c.id+'" data-a="closeDialog" style="color:var(--primary)">'+esc(c.nome)+'</a></li>';}).join('')+'</ul>',actions:[{label:'Entendi',a:'closeDialog',kind:'filled'}]};}
+    else{S.ui.dialog={icon:'delete',title:'Excluir '+p.nome+'?',body:'<p style="margin:0">O passo sai da biblioteca e dos níveis. Esta ação não pode ser desfeita.</p>',actions:[{label:'Cancelar',a:'closeDialog'},{label:'Excluir',a:'confirmaExcluir',v:p.id,kind:'danger'}]};}
+  },
+  confirmaExcluir:function(d){var i=PASSOS.findIndex(function(p){return p.id===d.v;});var nome=PASSOS[i].nome;PASSOS.splice(i,1);S.ui.dialog=null;go('passos');snack(nome+' excluído.');},
+  closeDialog:function(d,ev){if(d.self&&ev.target!==ev.currentTarget)return;S.ui.dialog=null;},
+  addVar:function(){S.ui.form.vars.push({t:'',liga:''});},
+  rmVar:function(d){S.ui.form.vars.splice(+d.i,1);},
+  fFormNivel:function(d){toggleIn(S.ui.form.niveis,d.v);},
+  fFormCat:function(d){S.ui.form.cat=d.v;},
+  picker:function(){S.ui.form.picker=!S.ui.form.picker;},
+  addPasso:function(d){var f=S.ui.form;f.passos.push(d.v);if(f.passos.length>1)f.trans.push('');snack(passo(d.v).nome+' adicionado.');},
+  rmPasso:function(d){var f=S.ui.form,i=+d.i;f.passos.splice(i,1);f.trans.splice(Math.max(0,i-1),1);},
+  mv:function(d){var f=S.ui.form,i=+d.i,j=i+(+d.v);if(j<0||j>=f.passos.length)return;var t=f.passos[i];f.passos[i]=f.passos[j];f.passos[j]=t;},
+  duplicar:function(d){var c=S.combos.find(function(x){return x.id===d.v;});var n={id:'p'+Date.now(),nome:c.nome+' (minha cópia)',nivel:c.nivel,aula:c.aula,passos:c.passos.slice(),trans:c.trans.slice(),origem:'pessoal',exemplo:false,criado:hojeISO()};S.combos.push(n);go('combinacao-'+n.id);snack('Cópia criada na sua área. A original não muda.');},
+  mfNivel:function(d){S.ui.mFiltro.nivel=S.ui.mFiltro.nivel===d.v?'':d.v;},
+  mfTipo:function(d){S.ui.mFiltro.tipo=S.ui.mFiltro.tipo===d.v?'':d.v;},
+  midiaPara:function(d){S.ui.midiaPara=d.v;S.ui.form=null;},
+  play:function(){S.ui.playing=!S.ui.playing;},
+  speed:function(d){S.ui.speed=d.v;},
+  loop:function(){S.ui.loop=!S.ui.loop;},
+  baixar:function(d){var m=S.midias.find(function(x){return x.id===d.v;});m.baixado=!m.baixado;snack(m.baixado?'Vídeo baixado para uso offline.':'Download removido.');},
+  rev:function(d){var f=S.fila.find(function(x){return x.id===d.id;}),com=document.getElementById('rev-com');
+    if(d.v==='ajuste'&&com&&!com.value.trim()){com.focus();snack('Escreva um comentário para pedir ajuste.');return;}
+    f.estado=d.v;snack({aprovado:'Aprovado. O envio aparece para todos com o selo Comunidade.',ajuste:'Ajuste pedido. O autor vê seu comentário.',recusado:'Envio recusado. O autor foi avisado.'}[d.v]);
+    var next=S.fila.find(function(x){return x.estado==='pendente';});go(next?'revisao-'+next.id:'revisao');},
+  agView:function(d){S.ui.agenda=d.v;},
+  agTipo:function(d){S.ui.agTipo=d.v;},
+  calMes:function(d){var b=S.ui.calMes?pd(S.ui.calMes):addDays(0);b=new Date(b.getFullYear(),b.getMonth()+(+d.v),1);S.ui.calMes=iso(b);},
+  calDia:function(d){S.ui.calDia=d.v;},
+  evTipo:function(d){S.ui.form.tipo=d.v;},
+  excluirEvento:function(d){S.ui.dialog={icon:'delete',title:'Excluir evento?',body:'<p style="margin:0">O evento sai da agenda.</p>',actions:[{label:'Cancelar',a:'closeDialog'},{label:'Excluir',a:'confirmaExcluirEvento',v:d.v,kind:'danger'}]};},
+  confirmaExcluirEvento:function(d){S.eventos=S.eventos.filter(function(e){return e.id!==d.v;});S.ui.dialog=null;go('agenda');snack('Evento excluído.');},
+  pendPick:function(d){S.ui['pp-'+d.id]=d.v;},
+  pendOk:function(d){var v=S.ui['pp-'+d.v];if(v==null){snack('Escolha uma das versões antes de confirmar.');return;}S.pendRes[d.v]=+v;snack('Versão confirmada. As regras do exame já mostram o valor.');},
+  novoNivel:function(){snack('No app real, abre o cadastro de nível com nome, cor, ordem e significado.');},
+  salvarItem:function(d){var e=exame(d.id),g=e.grupos[+d.g],it=g.itens[+d.i],el=document.getElementById('ed-'+d.g+'-'+d.i);if(!el||el.value.trim()===it.t)return snack('Nada mudou neste item.');it.t=el.value.trim();(S.versoes[e.id]=S.versoes[e.id]||[]).push({quando:'Hoje, '+new Date().toTimeString().slice(0,5),item:g.nome+', item '+(+d.i+1)+' editado pelo curador'});snack('Item salvo. A versão anterior ficou no histórico.');}
+};
+document.addEventListener('click',function(ev){
+  var el=ev.target.closest('[data-a]');if(!el)return;
+  var a=el.getAttribute('data-a');if(!A[a])return;
+  if(el.tagName==='INPUT')return;
+  if(el.disabled)return;
+  var d=Object.assign({},el.dataset);
+  if(a==='closeDialog'&&el.hasAttribute('href')){S.ui.dialog=null;return;}
+  if(a!=='closeDialog'||!d.self)ev.preventDefault();
+  if(a==='closeDialog'&&d.self){if(ev.target!==el)return;}
+  if(el.getAttribute('href')&&a==='midiaPara'){A[a](d,ev);location.hash=el.getAttribute('href').slice(1);return;}
+  A[a](d,ev);render(false);
+});
+document.addEventListener('change',function(ev){
+  var el=ev.target;
+  if(el.matches('input[type=checkbox][data-a="crit"]')){A.crit(el.dataset,ev);var k=el.dataset.v;render(false);if(el.checked){var n=document.querySelector('[data-v="'+k+'"]');if(n&&n.parentElement)n.parentElement.classList.add('pop');}return;}
+  if(el.matches('input[type=radio][data-a="pendPick"]')){A.pendPick(el.dataset);return;}
+  var t=el.getAttribute('data-in');if(!t)return;
+  if(t==='nota'){S.notas[el.dataset.v]=el.value;snack('Observação salva.');render(false);}
+  else if(t==='notaNivel'){S.notaNivel[el.dataset.v]=el.value;snack('Observação salva.');render(false);}
+  else if(t==='arquivo'){S.ui.form.arquivo=el.files&&el.files[0]?el.files[0].name:'';render(false);}
+  else if(t==='consent'){S.ui.form.consent=el.checked;}
+  else if(t==='varLiga'){S.ui.form.vars[+el.dataset.i].liga=el.value;}
+  else if(t==='form'&&el.tagName==='SELECT'){S.ui.form[el.dataset.k]=el.value;render(false);}
+});
+document.addEventListener('input',function(ev){
+  var el=ev.target,t=el.getAttribute('data-in');if(!t)return;
+  if(t==='q'){S.ui.q=el.value;render(false);}
+  else if(t==='form'){S.ui.form[el.dataset.k]=el.value;if(el.dataset.k==='nome'||el.dataset.k==='pq')render(false);}
+  else if(t==='var'){S.ui.form.vars[+el.dataset.i].t=el.value;}
+  else if(t==='trans'){S.ui.form.trans[+el.dataset.i]=el.value;}
+});
+document.addEventListener('submit',function(ev){
+  ev.preventDefault();
+  var fm=ev.target,k=fm.getAttribute('data-f'),f=S.ui.form||{},e={};
+  if(k==='entrar'){var em=document.getElementById('email').value.trim(),se=document.getElementById('senha').value;S.ui.form={email:em};if(!/.+@.+\..+/.test(em))e.email='Informe um e-mail válido, como nome@exemplo.com.';if(!se)e.senha='Informe sua senha.';S.ui.errs=e;if(!Object.keys(e).length){S.logado=true;S.ui.form=null;location.hash='inicio';snack('Bem-vindo de volta.');}render(false);return;}
+  if(k==='criar'){var nm=document.getElementById('nome').value.trim(),em2=document.getElementById('email').value.trim(),s2=document.getElementById('senha').value;S.ui.form={nome:nm,email:em2};if(!nm)e.nome='Informe seu nome.';if(!/.+@.+\..+/.test(em2))e.email='Informe um e-mail válido, como nome@exemplo.com.';if(s2.length<8)e.senha='A senha precisa ter ao menos 8 caracteres.';S.ui.errs=e;if(!Object.keys(e).length){S.perfil='aluno';S.ui.form=null;location.hash='escolher-nivel';}else render(false);return;}
+  if(k==='passo'){
+    if(!f.nome.trim())e.nome='Informe o nome do passo.';if(!f.niveis.length)e.niveis='Escolha ao menos um nível.';if(!f.cat)e.cat='Escolha a categoria.';
+    S.ui.errs=e;if(Object.keys(e).length){render(false);var fe=document.querySelector('.field.err input,.field.err textarea,.field.err button');if(fe)fe.focus();return;}
+    var id=fm.dataset.id,vars=f.vars.filter(function(v){return v.t.trim();}).map(function(v){return v.liga?{t:v.t.trim(),liga:v.liga}:{t:v.t.trim()};});
+    var data={nome:f.nome.trim(),niveis:f.niveis.slice(),cat:f.cat,desc:f.desc.trim(),pisadas:f.pisadas.trim()||null,variacoes:vars};
+    var target;
+    if(S.perfil==='curador'){if(id){target=passo(id);Object.assign(target,data);}else{target=Object.assign({id:slug(f.nome)+'-'+Date.now().toString(36).slice(-3),origem:'oficial'},data);PASSOS.push(target);}snack(id?'Passo atualizado. Histórico: editado pelo curador hoje.':'Passo publicado como Oficial.');}
+    else{target=Object.assign({id:slug(f.nome)+'-r'+Date.now().toString(36).slice(-3),origem:'revisao'},data);PASSOS.push(target);S.fila.unshift({id:'f'+Date.now(),tipo:'Passo',titulo:(id?'Edição de ':'')+data.nome,autor:'Você',data:hojeISO(),ref:target.id,estado:'pendente'});snack('Enviado para revisão. Visível só para você e o curador.');}
+    S.ui.form=null;go('passo-'+target.id);return;
+  }
+  if(k==='combo'){
+    if(!f.nome.trim())e.nome='Dê um nome à combinação.';if(f.passos.length<2)e.passos='A combinação precisa de ao menos 2 passos.';
+    S.ui.errs=e;if(Object.keys(e).length){render(false);return;}
+    var cid=fm.dataset.id,c;
+    if(cid){c=S.combos.find(function(x){return x.id===cid;});Object.assign(c,{nome:f.nome.trim(),nivel:f.nivel,aula:f.aula,passos:f.passos.slice(),trans:f.trans.slice()});}
+    else{c={id:'p'+Date.now(),nome:f.nome.trim(),nivel:f.nivel,aula:f.aula,passos:f.passos.slice(),trans:f.trans.slice(),origem:'pessoal',exemplo:false,criado:hojeISO()};S.combos.push(c);}
+    S.ui.form=null;go('combinacao-'+c.id);snack('Combinação salva na sua área pessoal.');return;
+  }
+  if(k==='midia'){
+    if(!f.arquivo)e.arquivo='Escolha um arquivo de foto ou vídeo.';if(!f.titulo.trim())e.titulo='Informe um título.';if(!f.passo&&!f.nivel&&!f.combo)e.vinc='Ligue a mídia a um passo, nível ou combinação.';if(!f.consent)e.consent='Confirme o consentimento de quem aparece para enviar.';
+    S.ui.errs=e;if(Object.keys(e).length){render(false);return;}
+    var cur=S.perfil==='curador',m={id:'m'+Date.now(),tipo:/\.(jpe?g|png|gif|webp|heic)$/i.test(f.arquivo)?'Foto':'Vídeo',titulo:f.titulo.trim(),passo:f.passo,nivel:f.nivel||(f.passo?passo(f.passo).niveis[0]:''),combo:f.combo,desc:f.desc.trim(),origem:cur?'oficial':'revisao',exemplo:false,baixado:false,cap:'Arquivo enviado: '+f.arquivo};
+    S.midias.push(m);if(!cur)S.fila.unshift({id:'f'+Date.now(),tipo:'Mídia',titulo:m.titulo,autor:'Você',data:hojeISO(),ref:f.passo,estado:'pendente'});
+    S.ui.form=null;S.ui.midiaPara=null;go('midia-'+m.id);snack(cur?'Mídia publicada.':'Enviada para revisão.');return;
+  }
+  if(k==='evento'){
+    if(!f.nome.trim())e.nome='Informe o nome do evento.';if(!f.data)e.data='Informe a data.';else if(f.data<hojeISO())e.data='A data já passou. Escolha uma data a partir de hoje.';if(!f.hora)e.hora='Informe o horário.';if(!f.local.trim())e.local='Informe o local.';if(!f.tipo)e.tipo='Escolha o tipo do evento.';
+    S.ui.errs=e;if(Object.keys(e).length){render(false);return;}
+    var ev2={id:'e'+Date.now(),nome:f.nome.trim(),data:f.data,hora:f.hora,local:f.local.trim(),cidade:'Belo Horizonte',tipo:f.tipo,desc:f.desc.trim(),link:f.link.trim(),obs:'',exemplo:false,pendente:S.perfil!=='curador'};
+    S.eventos.push(ev2);if(ev2.pendente)S.fila.unshift({id:'f'+Date.now(),tipo:'Evento',titulo:ev2.nome,autor:'Você',data:hojeISO(),ref:'',estado:'pendente'});
+    S.ui.form=null;go('evento-'+ev2.id);snack(ev2.pendente?'Evento enviado para revisão.':'Evento publicado na agenda.');return;
+  }
+  if(k==='mudarNivel'){var nv=document.getElementById('ev-nivel').value,dt=document.getElementById('ev-data').value;if(nv!==S.nivel){S.historico.push({nivel:nv,data:dt});S.nivel=nv;snack('Nível atualizado para '+nivel(nv).nome+'.');}else if(dt){S.historico[S.historico.length-1].data=dt;snack('Data registrada.');}render(false);return;}
+});
+window.addEventListener('hashchange',function(){S.ui.cameFrom=true;S.ui.errs={};var r=route();if(S.ui.form&&!/Form|criar|entrada|enviar/.test(r.v))S.ui.form=null;S.ui.playing=false;render(true);});
+var wideMQ=window.matchMedia('(min-width:1200px)');
+(wideMQ.addEventListener?wideMQ.addEventListener('change',function(){render(false);}):wideMQ.addListener(function(){render(false);}));
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener&&window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(){render(false);});
+window.addEventListener('scroll',function(){var t=document.querySelector('.topbar');if(t)t.classList.toggle('scrolled',window.scrollY>8);},{passive:true});
+document.addEventListener('keydown',function(ev){if(ev.key==='Escape'&&S.ui.dialog){S.ui.dialog=null;render(false);}});
+render(true);
+try{if(document.fonts&&document.fonts.load){document.fonts.load('24px "Material Symbols Rounded"','home').then(function(f){if(!f.length)document.documentElement.classList.add('no-icons');},function(){document.documentElement.classList.add('no-icons');});}}catch(e){}
+})();
+</script>
